@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#15803d;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#14532d;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="128" fill="url(#grad)" />
+  <circle cx="256" cy="256" r="190" fill="#ffffff" fill-opacity="0.12" />
+  
+  <!-- Wheat / Seedling Emblem -->
+  <g fill="#fef08a" transform="translate(106, 86) scale(0.6)">
+    <!-- Central Stalk -->
+    <path d="M 250 500 C 250 300 240 100 250 40 C 255 100 255 300 250 500 Z" fill="#86efac" />
+    <!-- Wheat grains left -->
+    <ellipse cx="190" cy="140" rx="35" ry="65" transform="rotate(-35 190 140)" />
+    <ellipse cx="170" cy="220" rx="35" ry="65" transform="rotate(-35 170 220)" />
+    <ellipse cx="160" cy="300" rx="35" ry="65" transform="rotate(-35 160 300)" />
+    <!-- Wheat grains right -->
+    <ellipse cx="310" cy="140" rx="35" ry="65" transform="rotate(35 310 140)" />
+    <ellipse cx="330" cy="220" rx="35" ry="65" transform="rotate(35 330 220)" />
+    <ellipse cx="340" cy="300" rx="35" ry="65" transform="rotate(35 340 300)" />
+    <!-- Top grain -->
+    <ellipse cx="250" cy="80" rx="30" ry="60" />
+  </g>
+  <!-- Bridge Arch Symbol at Bottom -->
+  <path d="M 96 410 Q 256 310 416 410" stroke="#fef08a" stroke-width="24" stroke-linecap="round" fill="none" />
+</svg>
+
