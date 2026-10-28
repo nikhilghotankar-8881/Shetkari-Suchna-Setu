@@ -54,7 +54,7 @@ async def create_profile(
         max_age=31536000,  # 1 year
     )
 
-    resp = ProfileResponse.from_orm(new_profile)
+    resp = ProfileResponse.model_validate(new_profile)
     resp.token = raw_token
     return resp
 
