@@ -246,6 +246,7 @@ async def trigger_source_poll(
 
 
 @router.get("/review-queue")
+@router.get("/queue")
 async def get_review_queue(
     user: User = Depends(require_role(["reviewer", "admin"])),
     db: AsyncSession = Depends(get_db),
@@ -379,6 +380,7 @@ async def submit_review_decision(
 
 
 @router.get("/audit-logs", response_model=List[AuditLogResponse])
+@router.get("/audit", response_model=List[AuditLogResponse])
 async def list_audit_logs(
     limit: int = 50,
     user: User = Depends(require_role(["viewer", "reviewer", "admin"])),

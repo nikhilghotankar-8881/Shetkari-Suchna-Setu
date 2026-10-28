@@ -15,10 +15,11 @@ from app.core.security import generate_profile_token, hash_token
 from app.core.dependencies import get_current_farmer_profile
 from app.services.matcher import is_potentially_relevant
 
-router = APIRouter(prefix="/api/v1/farmer", tags=["Farmer (Anonymous)"])
+router = APIRouter(prefix="/api/v1", tags=["Farmer (Anonymous)"])
 
 
 @router.post("/profile", response_model=ProfileResponse, status_code=status.HTTP_201_CREATED)
+@router.post("/farmer/profile", response_model=ProfileResponse, status_code=status.HTTP_201_CREATED)
 async def create_profile(
     payload: ProfileCreate,
     response: Response,
@@ -219,6 +220,7 @@ async def get_farmer_alerts(
 
 
 @router.patch("/alerts/{alert_id}/read", status_code=status.HTTP_204_NO_CONTENT)
+@router.post("/alerts/{alert_id}/read", status_code=status.HTTP_204_NO_CONTENT)
 async def mark_alert_as_read(
     alert_id: str,
     profile: Profile = Depends(get_current_farmer_profile),

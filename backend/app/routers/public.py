@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 from fastapi import APIRouter, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
@@ -115,4 +115,59 @@ async def get_crop_insurance_info():
         ],
         "important_note": "Shetkari Suchna-Setu does not file insurance claims. Always file claims directly via the official PMFBY portal, mobile app, or CSC center."
     }
+
+
+@router.get("/notices/latest")
+async def get_latest_notices(
+    district: Optional[str] = None,
+    crops: Optional[str] = None,
+    filter: Optional[str] = None,
+    db: AsyncSession = Depends(get_db),
+):
+    """
+    Public feed of newly detected and changed notices.
+    Shows unified diffs and verification status badges.
+    """
+    stmt = (
+        select(NoticeVersion)
+        .options(
+            selectinload(NoticeVersion.notice).selectinload(Notice.source),
+            selectinload(NoticeVersion.extraction),
+            selectinload(NoticeVersion.verification),
+        )
+        .order_by(NoticeVersion.created_at.desc())
+    )
+    result = await db.execute(stmt)
+    versions = result.scalars().all()
+
+    updates = []
+    for ver in versions:
+        verif = ver.verification
+        status_val = verif.status if verif else "Pending"
+        if filter == "CHANGED" and ver.change_type != "changed":
+            continue
+        if filter == "NEW" and ver.change_type != "new":
+            continue
+
+        ext = ver.extraction
+        fields = ext.fields_json if ext else {}
+        source = ver.notice.source if ver.notice else None
+
+        updates.append({
+            "id": ver.id,
+            "notice_id": ver.notice_id,
+            "title": fields.get("name", ver.notice.title if ver.notice else "Notice Update"),
+            "department": fields.get("department", "Agriculture Department"),
+            "type": ver.change_type.upper(),
+            "change_type": ver.change_type,
+            "diff_text": ver.diff_text,
+            "verification_status": status_val,
+            "source_name": source.name if source else "Official Portal",
+            "source_url": source.url if source else "",
+            "canonical_url": ver.notice.canonical_url if ver.notice else "",
+            "created_at": ver.created_at,
+        })
+
+    return updates
+
 

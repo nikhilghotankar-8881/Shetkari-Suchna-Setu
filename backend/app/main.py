@@ -112,3 +112,5 @@ app.include_router(health_router)
 app.include_router(public_router)
 app.include_router(farmer_router)
 app.include_router(admin_router)
+# Support direct /admin/... routes from frontend
+app.include_router(admin_router, prefix="/admin")
