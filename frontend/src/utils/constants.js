@@ -78,3 +78,4 @@ export const VERIFICATION_BADGES = {
     description_en: 'Newer notice replaced this'
   }
 };
+
