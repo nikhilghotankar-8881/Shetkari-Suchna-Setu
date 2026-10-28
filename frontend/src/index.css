@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-marathi: 'Mukta', 'Noto Sans Devanagari', sans-serif;
+    --font-latin: 'Outfit', sans-serif;
+  }
+
+  body {
+    font-family: var(--font-marathi);
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Ensure smooth bottom padding for mobile sticky navigation */
+.pb-safe-nav {
+  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+}
+
+/* Minimum 44px touch targets for mobile accessibility */
+.touch-target {
+  min-height: 44px;
+  min-width: 44px;
+}
