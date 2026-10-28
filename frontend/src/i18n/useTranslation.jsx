@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import mrTranslations from './mr.json';
 import enTranslations from './en.json';
 
@@ -34,4 +34,3 @@ export const useTranslation = () => {
   }
   return context;
 };
-
