@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Outlet, Link } from 'react-router-dom';
 import { BottomNav } from './BottomNav';
 import { LanguageToggle } from '../../components/LanguageToggle';
+import { OfflineBanner } from '../../components/OfflineBanner';
 import { useTranslation } from '../../i18n/useTranslation';
 import { api } from '../../api/client';
 import { useFarmerToken } from '../../auth/FarmerTokenContext';
@@ -42,6 +43,8 @@ export const FarmerLayout = () => {
           </Link>
           <LanguageToggle />
         </div>
+        {/* Offline Status Bar if network disconnects */}
+        <OfflineBanner />
       </header>
 
       {/* Main Screen Content */}
@@ -54,4 +57,3 @@ export const FarmerLayout = () => {
     </div>
   );
 };
-

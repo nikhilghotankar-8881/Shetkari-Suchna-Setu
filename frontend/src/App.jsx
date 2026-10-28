@@ -9,6 +9,7 @@ import { ProfileScreen } from './farmer/profile/ProfileScreen';
 import { OnboardingFlow } from './farmer/onboarding/OnboardingFlow';
 import { ProtectedRoute } from './auth/ProtectedRoute';
 import { useFarmerToken } from './auth/FarmerTokenContext';
+import { DemoController } from './components/DemoController';
 
 // Admin bundle is strictly lazy-loaded to keep farmer page weight light
 const AdminLayout = lazy(() => import('./admin/layout/AdminLayout').then(m => ({ default: m.AdminLayout })));
@@ -28,56 +29,60 @@ export default function App() {
   const { hasProfile } = useFarmerToken();
 
   return (
-    <Routes>
-      {/* Root redirect */}
-      <Route
-        path="/"
-        element={hasProfile ? <Navigate to="/schemes" replace /> : <Navigate to="/onboarding" replace />}
-      />
+    <>
+      {/* Floating Demo Control Helper for Demo Days & Testing */}
+      <DemoController />
 
-      {/* Onboarding Wizard */}
-      <Route path="/onboarding" element={<OnboardingFlow />} />
+      <Routes>
+        {/* Root redirect */}
+        <Route
+          path="/"
+          element={hasProfile ? <Navigate to="/schemes" replace /> : <Navigate to="/onboarding" replace />}
+        />
 
-      {/* Farmer Dashboard Routes */}
-      <Route element={<FarmerLayout />}>
-        <Route path="/schemes" element={<SchemesScreen />} />
-        <Route path="/updates" element={<UpdatesScreen />} />
-        <Route path="/insurance" element={<InsuranceScreen />} />
-        <Route path="/alerts" element={<AlertsScreen />} />
-        <Route path="/profile" element={<ProfileScreen />} />
-      </Route>
+        {/* Onboarding Wizard */}
+        <Route path="/onboarding" element={<OnboardingFlow />} />
 
-      {/* Admin Public Login */}
-      <Route
-        path="/admin/login"
-        element={
-          <Suspense fallback={<AdminLoadingFallback />}>
-            <LoginPage />
-          </Suspense>
-        }
-      />
-
-      {/* Admin Protected Dashboard Routes */}
-      <Route
-        path="/admin"
-        element={
-          <Suspense fallback={<AdminLoadingFallback />}>
-            <ProtectedRoute requiredRole="viewer" />
-          </Suspense>
-        }
-      >
-        <Route element={<AdminLayout />}>
-          <Route index element={<Navigate to="/admin/review" replace />} />
-          <Route path="sources" element={<SourcesTable />} />
-          <Route path="review" element={<ReviewQueue />} />
-          <Route path="audit" element={<AuditLog />} />
-          <Route path="metrics" element={<MetricsPanel />} />
+        {/* Farmer Dashboard Routes */}
+        <Route element={<FarmerLayout />}>
+          <Route path="/schemes" element={<SchemesScreen />} />
+          <Route path="/updates" element={<UpdatesScreen />} />
+          <Route path="/insurance" element={<InsuranceScreen />} />
+          <Route path="/alerts" element={<AlertsScreen />} />
+          <Route path="/profile" element={<ProfileScreen />} />
         </Route>
-      </Route>
 
-      {/* Fallback */}
-      <Route path="*" element={<Navigate to="/" replace />} />
-    </Routes>
+        {/* Admin Public Login */}
+        <Route
+          path="/admin/login"
+          element={
+            <Suspense fallback={<AdminLoadingFallback />}>
+              <LoginPage />
+            </Suspense>
+          }
+        />
+
+        {/* Admin Protected Dashboard Routes */}
+        <Route
+          path="/admin"
+          element={
+            <Suspense fallback={<AdminLoadingFallback />}>
+              <ProtectedRoute requiredRole="viewer" />
+            </Suspense>
+          }
+        >
+          <Route element={<AdminLayout />}>
+            <Route index element={<Navigate to="/admin/review" replace />} />
+            <Route path="sources" element={<SourcesTable />} />
+            <Route path="review" element={<ReviewQueue />} />
+            <Route path="audit" element={<AuditLog />} />
+            <Route path="metrics" element={<MetricsPanel />} />
+          </Route>
+        </Route>
+
+        {/* Fallback */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </>
   );
 }
-
