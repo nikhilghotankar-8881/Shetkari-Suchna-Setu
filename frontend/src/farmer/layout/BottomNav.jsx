@@ -1,20 +1,20 @@
 import { NavLink } from 'react-router-dom';
-import { FileText, Bell, Shield, User, Sparkles } from 'lucide-react';
+import { LayoutDashboard, Compass, Sparkles, Bell, User } from 'lucide-react';
 import { useTranslation } from '../../i18n/useTranslation';
 
 export const BottomNav = ({ unreadCount = 0 }) => {
   const { t } = useTranslation();
 
   const navItems = [
-    { to: '/schemes', label: t('nav_schemes'), icon: FileText },
+    { to: '/dashboard', label: t('nav_dashboard'), icon: LayoutDashboard },
+    { to: '/schemes', label: t('nav_schemes'), icon: Compass },
     { to: '/updates', label: t('nav_updates'), icon: Sparkles },
-    { to: '/insurance', label: t('nav_insurance'), icon: Shield },
     { to: '/alerts', label: t('nav_alerts'), icon: Bell, badge: unreadCount },
     { to: '/profile', label: t('nav_profile'), icon: User },
   ];
 
   return (
-    <nav className="fixed bottom-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-md border-t border-stone-200/80 shadow-lg">
+    <nav className="fixed bottom-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-md border-t border-stone-200/90 shadow-lg">
       <div className="max-w-md mx-auto grid grid-cols-5 h-16">
         {navItems.map(({ to, label, icon: Icon, badge }) => (
           <NavLink
@@ -42,4 +42,3 @@ export const BottomNav = ({ unreadCount = 0 }) => {
     </nav>
   );
 };
-

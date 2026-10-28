@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { api } from '../../api/client';
 import { useFarmerToken } from '../../auth/FarmerTokenContext';
 import { useTranslation } from '../../i18n/useTranslation';
-import { Bell, Check, Sparkles, RefreshCw, CheckCircle2, ChevronRight } from 'lucide-react';
+import { Bell, Check, Sparkles, RefreshCw, CheckCircle2, ChevronRight, AlertCircle } from 'lucide-react';
 
 export const AlertsScreen = () => {
   const { token } = useFarmerToken();
@@ -38,7 +38,7 @@ export const AlertsScreen = () => {
             <span>{t('nav_alerts')}</span>
           </h2>
           <p className="text-xs text-stone-500 mt-0.5">
-            तुमच्या पिकांशी संबंधित महत्त्वाच्या सूचना
+            तुमच्या पिकांशी व जिल्ह्याशी संबंधित महत्त्वाच्या सूचना
           </p>
         </div>
       </div>
@@ -63,6 +63,11 @@ export const AlertsScreen = () => {
             const title = lang === 'mr' ? alert.title_mr : alert.title_en;
             const body = lang === 'mr' ? alert.body_mr : alert.body_en;
 
+            // Direct link to the Change-Comparison screen if update_id is available!
+            const targetUrl = alert.update_id
+              ? `/updates/${alert.update_id}`
+              : (alert.scheme_id ? `/schemes/${alert.scheme_id}` : '/updates');
+
             return (
               <div
                 key={alert.id}
@@ -80,7 +85,7 @@ export const AlertsScreen = () => {
                       <span className="w-2 h-2 rounded-full bg-emerald-600 ring-2 ring-emerald-200 animate-pulse" />
                     )}
                     <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-800">
-                      {alert.kind}
+                      {alert.kind === 'CHANGED' ? 'बदलाव / Revised' : 'नवीन / New'}
                     </span>
                   </div>
 
@@ -95,20 +100,23 @@ export const AlertsScreen = () => {
                 {/* Alert Title & Body */}
                 <div>
                   <h3 className="text-sm font-bold text-stone-900 leading-snug">
-                    {title}
+                    <Link to={targetUrl} className="hover:text-emerald-800 transition-colors">
+                      {title}
+                    </Link>
                   </h3>
                   <p className="text-xs text-stone-600 mt-1 leading-relaxed">
                     {body}
                   </p>
                 </div>
 
-                {/* Actions */}
+                {/* Actions: View Changes comparison + Mark read */}
                 <div className="pt-2 border-t border-stone-200/60 flex items-center justify-between text-xs">
                   <Link
-                    to="/schemes"
-                    className="font-bold text-emerald-800 hover:text-emerald-950 inline-flex items-center gap-1 touch-target"
+                    to={targetUrl}
+                    className="font-bold text-emerald-800 hover:text-emerald-950 inline-flex items-center gap-1 touch-target py-1 px-2 rounded-lg bg-emerald-100/60 hover:bg-emerald-100"
                   >
-                    <span>{lang === 'mr' ? 'योजना पहा' : 'View Scheme'}</span>
+                    <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
+                    <span>{alert.kind === 'CHANGED' ? t('compare_changes') : t('view_details')}</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </Link>
 
@@ -130,4 +138,3 @@ export const AlertsScreen = () => {
     </div>
   );
 };
-
