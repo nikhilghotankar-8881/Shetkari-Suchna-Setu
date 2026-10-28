@@ -1,0 +1,48 @@
+[
+  {
+    "id": "fixture_pmfby_2026_mr",
+    "language": "mr",
+    "source_name": "Pradhan Mantri Fasal Bima Yojana",
+    "raw_text": "कृषी विभाग, महाराष्ट्र शासन\nविषय: प्रधानमंत्री पीक विमा योजना - खरीप २०२६ अंतिम मुदत सूचना.\nसर्व शेतकरी बांधवांना कळविण्यात येते की खरीप हंगाम २०२६ साठी भात, सोयाबीन, कापूस, तूर आणि मूग पिकांसाठी विमा नोंदणी सुरू झाली आहे.\nपात्रता: महाराष्ट्रातील सर्व भूधारक आणि भाडेकरू शेतकरी जे अधिसूचित पिकांची लागवड करतात.\nलाभ: नैसर्गिक आपत्तीमुळे पिकाचे नुकसान झाल्यास आर्थिक भरपाई थेट बँक खात्यात जमा.\nअर्ज करण्याची अंतिम मुदत: ३१ जुलै २०२६.\nनोंदणीसाठी आवश्यक कागदपत्रे: ७/१२ उतारा, ८-अ, बँक पासबुक, पेरणी स्वयंघोषणापत्र.\nअधिकृत अर्ज पोर्टल: https://pmfby.gov.in",
+    "ground_truth": {
+      "name": "प्रधानमंत्री पीक विमा योजना - खरीप २०२६",
+      "department": "कृषी विभाग, महाराष्ट्र शासन",
+      "eligibility": "महाराष्ट्रातील सर्व भूधारक आणि भाडेकरू शेतकरी जे अधिसूचित पिकांची लागवड करतात.",
+      "benefits": "नैसर्गिक आपत्तीमुळे पिकाचे नुकसान झाल्यास आर्थिक भरपाई थेट बँक खात्यात जमा.",
+      "deadlines": ["३१ जुलै २०२६"],
+      "regions": ["महाराष्ट्र"],
+      "crops": ["भात", "सोयाबीन", "कापूस", "तूर", "मूग"],
+      "documents": ["७/१२ उतारा", "८-अ", "बँक पासबुक", "पेरणी स्वयंघोषणापत्र"],
+      "official_application_link": "https://pmfby.gov.in",
+      "evidence_spans": {
+        "name": "प्रधानमंत्री पीक विमा योजना - खरीप २०२६ अंतिम मुदत सूचना.",
+        "department": "कृषी विभाग, महाराष्ट्र शासन",
+        "eligibility": "महाराष्ट्रातील सर्व भूधारक आणि भाडेकरू शेतकरी जे अधिसूचित पिकांची लागवड करतात.",
+        "benefits": "नैसर्गिक आपत्तीमुळे पिकाचे नुकसान झाल्यास आर्थिक भरपाई थेट बँक खात्यात जमा."
+      }
+    }
+  },
+  {
+    "id": "fixture_drip_irrigation_en",
+    "language": "en",
+    "source_name": "MahaDBT Farmer Schemes",
+    "raw_text": "Department of Agriculture, Government of Maharashtra\nScheme: Centrally Sponsored Scheme on Micro Irrigation (Per Drop More Crop)\nEligibility: Small and marginal farmers with land records in Maharashtra possessing an assured water source.\nBenefits: Up to 55% subsidy for small and marginal farmers, and 45% for other farmers for installing drip and sprinkler systems.\nDeadline for application: 15 August 2026.\nRequired Documents: 7/12 extract, 8-A extract, Aadhaar card, electricity bill of water pump.\nApply online at: https://mahadbt.maharashtra.gov.in",
+    "ground_truth": {
+      "name": "Centrally Sponsored Scheme on Micro Irrigation (Per Drop More Crop)",
+      "department": "Department of Agriculture, Government of Maharashtra",
+      "eligibility": "Small and marginal farmers with land records in Maharashtra possessing an assured water source.",
+      "benefits": "Up to 55% subsidy for small and marginal farmers, and 45% for other farmers for installing drip and sprinkler systems.",
+      "deadlines": ["15 August 2026"],
+      "regions": ["Maharashtra"],
+      "crops": [],
+      "documents": ["7/12 extract", "8-A extract", "Aadhaar card", "electricity bill of water pump"],
+      "official_application_link": "https://mahadbt.maharashtra.gov.in",
+      "evidence_spans": {
+        "name": "Scheme: Centrally Sponsored Scheme on Micro Irrigation (Per Drop More Crop)",
+        "department": "Department of Agriculture, Government of Maharashtra",
+        "eligibility": "Small and marginal farmers with land records in Maharashtra possessing an assured water source.",
+        "benefits": "Up to 55% subsidy for small and marginal farmers, and 45% for other farmers for installing drip and sprinkler systems."
+      }
+    }
+  }
+]
