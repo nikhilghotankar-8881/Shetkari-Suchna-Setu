@@ -3,6 +3,7 @@ from app.models.source import Source
 from app.models.snapshot import Snapshot
 from app.models.notice import Notice, NoticeVersion
 from app.models.extraction import Extraction, Verification
+from app.models.scheme import Scheme
 from app.models.profile import Profile
 from app.models.alert import Alert
 from app.models.audit import AuditLog
@@ -16,6 +17,7 @@ __all__ = [
     "NoticeVersion",
     "Extraction",
     "Verification",
+    "Scheme",
     "Profile",
     "Alert",
     "AuditLog",

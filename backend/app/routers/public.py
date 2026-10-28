@@ -85,3 +85,34 @@ async def list_public_schemes(db: AsyncSession = Depends(get_db)):
         )
 
     return cards
+
+
+@router.get("/insurance")
+async def get_crop_insurance_info():
+    """
+    Public Crop Insurance information (PMFBY Maharashtra).
+    Provides enrolment rules, loss reporting guidelines within 72 hours,
+    and direct official links without filing claims on behalf of farmers.
+    """
+    return {
+        "scheme_name": "Pradhan Mantri Fasal Bima Yojana (PMFBY)",
+        "scheme_marathi": "पंतप्रधान पीक विमा योजना",
+        "official_portal": "https://pmfby.gov.in",
+        "official_toll_free": "1800-180-1551",
+        "farmer_app_name": "Crop Insurance App (Government of India)",
+        "enrolment_requirements": [
+            "7/12 Land Extract (७/१२ उतारा)",
+            "8-A Extract (८-अ नोंद)",
+            "Bank Passbook copy (बँक पासबुक)",
+            "Aadhaar Card (आधार कार्ड)",
+            "Sowing Declaration Certificate (पेरणी स्वयंघोषणापत्र)"
+        ],
+        "crop_loss_reporting_steps": [
+            "Report localized natural calamity or post-harvest loss within 72 hours.",
+            "Use the official Crop Insurance App or contact the toll-free number / local Taluka Agriculture Officer.",
+            "Keep insurance policy receipt number and survey number ready.",
+            "Field survey will be conducted by agriculture officer and insurance company representative."
+        ],
+        "important_note": "Shetkari Suchna-Setu does not file insurance claims. Always file claims directly via the official PMFBY portal, mobile app, or CSC center."
+    }
+
