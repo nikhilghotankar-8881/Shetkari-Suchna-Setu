@@ -3,11 +3,8 @@ import secrets
 from datetime import datetime, timedelta
 from typing import Optional, Any
 import jwt
-from passlib.context import CryptContext
+import bcrypt
 from app.config import settings
-
-# Password hashing context (bcrypt)
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
 def generate_profile_token() -> str:
@@ -21,13 +18,19 @@ def hash_token(token: str) -> str:
 
 
 def verify_password(plain_password: str, hashed_password: str) -> bool:
-    """Verify admin plaintext password against stored hash."""
-    return pwd_context.verify(plain_password, hashed_password)
+    """Verify admin plaintext password against stored bcrypt hash."""
+    try:
+        pw_bytes = plain_password.encode("utf-8")[:72]
+        return bcrypt.checkpw(pw_bytes, hashed_password.encode("utf-8"))
+    except Exception:
+        return False
 
 
 def get_password_hash(password: str) -> str:
     """Generate bcrypt hash for admin password."""
-    return pwd_context.hash(password)
+    pw_bytes = password.encode("utf-8")[:72]
+    salt = bcrypt.gensalt(rounds=12)
+    return bcrypt.hashpw(pw_bytes, salt).decode("utf-8")
 
 
 def create_access_token(data: dict, expires_delta: Optional[timedelta] = None) -> str:
