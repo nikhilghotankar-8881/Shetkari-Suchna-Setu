@@ -95,7 +95,9 @@ export const SourcesTable = () => {
                     </td>
 
                     <td className="py-3.5 px-4 text-stone-400">
-                      {new Date(src.last_checked_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                      {src.last_checked_at
+                        ? new Date(src.last_checked_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+                        : 'Scheduled'}
                     </td>
 
                     <td className="py-3.5 px-4">

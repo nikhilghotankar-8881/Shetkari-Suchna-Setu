@@ -28,6 +28,7 @@ export const ReviewQueue = () => {
   };
 
   const handleReject = async (id) => {
+    await api.rejectExtraction(id, adminUser?.jwt);
     setActionMsg(`Extraction #${id} marked as Rejected.`);
     setQueue(prev => prev.filter(item => item.id !== id));
     setTimeout(() => setActionMsg(''), 4000);

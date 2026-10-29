@@ -7,8 +7,8 @@ export const LoginPage = () => {
   const navigate = useNavigate();
   const { login, verifyMFA, mfaPending } = useAdminAuth();
 
-  const [email, setEmail] = useState('reviewer@shetkari.gov.in');
-  const [password, setPassword] = useState('password123');
+  const [email, setEmail] = useState('admin@shetkari-setu.gov.in');
+  const [password, setPassword] = useState('Admin@SecurePassword123');
   const [totp, setTotp] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -18,9 +18,12 @@ export const LoginPage = () => {
     setError('');
     setLoading(true);
     try {
-      await login(email, password);
+      const user = await login(email, password);
+      if (user && user.jwt) {
+        navigate('/admin/review');
+      }
     } catch (err) {
-      setError('Invalid email or password. Generic error for security.');
+      setError(err.message || 'Invalid email or password. Please verify credentials.');
     } finally {
       setLoading(false);
     }

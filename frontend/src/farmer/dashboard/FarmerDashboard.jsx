@@ -20,7 +20,7 @@ import {
 } from 'lucide-react';
 
 export const FarmerDashboard = () => {
-  const { profile } = useFarmerToken();
+  const { profile, token } = useFarmerToken();
   const { lang, t } = useTranslation();
 
   const [schemes, setSchemes] = useState([]);
@@ -34,7 +34,7 @@ export const FarmerDashboard = () => {
     setLoading(true);
 
     Promise.all([
-      api.getSchemes({ district: profile?.district, crops: profile?.crops }),
+      api.getSchemes({ district: profile?.district, crops: profile?.crops, token }),
       api.getNoticeUpdates({ district: profile?.district, crops: profile?.crops })
     ]).then(([sData, uData]) => {
       if (isMounted) {

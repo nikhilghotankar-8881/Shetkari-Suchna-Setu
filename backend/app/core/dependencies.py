@@ -16,14 +16,19 @@ admin_bearer_scheme = HTTPBearer(auto_error=False)
 async def get_current_farmer_profile(
     x_profile_token: Optional[str] = Header(None, alias="X-Profile-Token"),
     profile_token: Optional[str] = Cookie(None, alias="profile_token"),
+    authorization: Optional[str] = Header(None, alias="Authorization"),
     db: AsyncSession = Depends(get_db),
 ) -> Profile:
     """
     Authenticate an anonymous farmer via their 256-bit bearer token.
-    The raw token is provided via HTTP header or secure cookie.
+    The raw token is provided via HTTP Authorization header, X-Profile-Token header, or secure cookie.
     Matches SHA-256(token) against stored token_hash.
     """
-    raw_token = x_profile_token or profile_token
+    auth_token = None
+    if authorization and authorization.lower().startswith("bearer "):
+        auth_token = authorization[7:].strip()
+
+    raw_token = x_profile_token or profile_token or auth_token
     if not raw_token:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,

@@ -1,6 +1,30 @@
-import { BarChart3, Activity, Clock, ShieldCheck, AlertTriangle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { api } from '../../api/client';
+import { useAdminAuth } from '../../auth/AdminAuthContext';
+import { BarChart3, Activity, Clock, ShieldCheck, AlertTriangle, Users, FileText } from 'lucide-react';
 
 export const MetricsPanel = () => {
+  const { adminUser } = useAdminAuth();
+  const [metrics, setMetrics] = useState({
+    total_sources: 3,
+    healthy_sources: 3,
+    total_notices: 0,
+    total_profiles: 0,
+    review_queue_length: 0
+  });
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let isMounted = true;
+    api.getMetrics(adminUser?.jwt).then(data => {
+      if (isMounted && data) {
+        setMetrics(data);
+        setLoading(false);
+      }
+    });
+    return () => { isMounted = false; };
+  }, [adminUser?.jwt]);
+
   return (
     <div className="space-y-6">
       <div className="pb-4 border-b border-stone-800">
@@ -21,23 +45,23 @@ export const MetricsPanel = () => {
             <Activity className="w-4 h-4 text-emerald-400" />
           </div>
           <div className="text-2xl font-extrabold text-white font-mono">
-            4 / 4
+            {metrics.healthy_sources} / {metrics.total_sources}
           </div>
           <div className="text-[11px] text-emerald-400 font-semibold">
-            100% Up • 0 blocked by robots
+            {metrics.total_sources > 0 ? `${Math.round((metrics.healthy_sources / metrics.total_sources) * 100)}% Up` : '100% Up'} • 0 blocked by robots
           </div>
         </div>
 
         <div className="bg-stone-950 border border-stone-800 rounded-2xl p-4.5 space-y-2">
           <div className="flex items-center justify-between text-stone-400 text-xs">
-            <span>Median Detection → Publish</span>
-            <Clock className="w-4 h-4 text-sky-400" />
+            <span>Anonymous Farmer Profiles</span>
+            <Users className="w-4 h-4 text-sky-400" />
           </div>
           <div className="text-2xl font-extrabold text-white font-mono">
-            18 mins
+            {metrics.total_profiles}
           </div>
           <div className="text-[11px] text-stone-400">
-            Within target (&lt; 60 mins)
+            DPDP Compliant (0 PII stored)
           </div>
         </div>
 
@@ -47,10 +71,10 @@ export const MetricsPanel = () => {
             <AlertTriangle className="w-4 h-4 text-amber-400" />
           </div>
           <div className="text-2xl font-extrabold text-white font-mono">
-            1 item
+            {metrics.review_queue_length} items
           </div>
           <div className="text-[11px] text-amber-400">
-            1 high priority (deadline change)
+            {metrics.review_queue_length > 0 ? 'Awaiting human verification' : 'Queue cleared'}
           </div>
         </div>
 

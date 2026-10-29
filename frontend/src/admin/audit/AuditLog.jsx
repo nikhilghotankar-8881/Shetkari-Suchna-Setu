@@ -56,7 +56,7 @@ export const AuditLog = () => {
               {logs.map(log => (
                 <tr key={log.id} className="hover:bg-stone-900/50 transition-colors">
                   <td className="py-3.5 px-4 font-mono text-stone-400 text-[11px]">
-                    {new Date(log.timestamp).toLocaleString([], { dateStyle: 'short', timeStyle: 'medium' })}
+                    {new Date(log.created_at || log.timestamp || Date.now()).toLocaleString([], { dateStyle: 'short', timeStyle: 'medium' })}
                   </td>
                   <td className="py-3.5 px-4">
                     <span className="font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded text-[11px] border border-emerald-900">

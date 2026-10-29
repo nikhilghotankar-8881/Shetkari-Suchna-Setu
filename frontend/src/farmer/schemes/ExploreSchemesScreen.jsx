@@ -7,7 +7,7 @@ import { useTranslation } from '../../i18n/useTranslation';
 import { Search, Filter, RefreshCw, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export const ExploreSchemesScreen = () => {
-  const { profile } = useFarmerToken();
+  const { profile, token } = useFarmerToken();
   const { lang, t } = useTranslation();
 
   const [schemes, setSchemes] = useState([]);
@@ -20,7 +20,8 @@ export const ExploreSchemesScreen = () => {
     const data = await api.getSchemes({
       district: profile?.district,
       crops: profile?.crops,
-      search: searchQuery
+      search: searchQuery,
+      token
     });
     setSchemes(data);
     setLoading(false);
