@@ -87,6 +87,56 @@ async def list_public_schemes(db: AsyncSession = Depends(get_db)):
     return cards
 
 
+@router.get("/schemes/{id}", response_model=SchemeCardResponse)
+@router.get("/notices/{id}", response_model=SchemeCardResponse)
+async def get_public_scheme_by_id(id: str, db: AsyncSession = Depends(get_db)):
+    """Fetch details of a single scheme or notice by version ID or notice ID."""
+    stmt = (
+        select(NoticeVersion)
+        .options(
+            selectinload(NoticeVersion.notice).selectinload(Notice.source),
+            selectinload(NoticeVersion.extraction),
+            selectinload(NoticeVersion.verification),
+        )
+        .where((NoticeVersion.id == id) | (NoticeVersion.notice_id == id))
+        .order_by(NoticeVersion.created_at.desc())
+    )
+    result = await db.execute(stmt)
+    ver = result.scalars().first()
+    if not ver:
+        raise HTTPException(status_code=404, detail="Scheme/notice not found")
+
+    verif = ver.verification
+    status = verif.status if verif else "Pending"
+    ext = ver.extraction
+    fields = ext.fields_json if ext else {}
+
+    raw_deadlines = fields.get("deadlines", [])
+    is_verified = (status == "Verified")
+    deadline_str = ", ".join(raw_deadlines) if (is_verified and raw_deadlines) else "Not yet verified"
+    source = ver.notice.source if ver.notice else None
+
+    return SchemeCardResponse(
+        id=ver.id,
+        notice_id=ver.notice_id,
+        version_id=ver.id,
+        scheme_name=fields.get("name", ver.notice.title if ver.notice else "Government Notice"),
+        department=fields.get("department", "Agriculture Department, Maharashtra"),
+        eligibility=fields.get("eligibility", "Refer to official notice"),
+        benefits=fields.get("benefits", "Refer to official scheme details"),
+        deadline=deadline_str,
+        deadline_is_verified=is_verified,
+        documents=fields.get("documents", []),
+        official_application_link=fields.get("official_application_link") or (ver.notice.canonical_url if ver.notice else ""),
+        source_name=source.name if source else "Official Government Portal",
+        source_url=source.url if source else (ver.notice.canonical_url if ver.notice else ""),
+        last_verified_at=verif.reviewed_at if verif else None,
+        verification_badge=status,
+        change_type=ver.change_type,
+        diff_text=ver.diff_text,
+    )
+
+
 @router.get("/insurance")
 async def get_crop_insurance_info():
     """
