@@ -1,25 +1,32 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --font-marathi: 'Mukta', 'Noto Sans Devanagari', sans-serif;
-    --font-latin: 'Outfit', sans-serif;
-  }
+@import "@fontsource/noto-sans-devanagari/400.css";
+@import "@fontsource/noto-sans-devanagari/600.css";
+@import "@fontsource/noto-sans-devanagari/700.css";
+@import "@fontsource/noto-sans/400.css";
+@import "@fontsource/noto-sans/600.css";
+@import "@fontsource/noto-sans/700.css";
 
-  body {
-    font-family: var(--font-marathi);
-    -webkit-tap-highlight-color: transparent;
-  }
+:root {
+  font-family: "Noto Sans Devanagari", "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Ensure smooth bottom padding for mobile sticky navigation */
-.pb-safe-nav {
-  padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+html {
+  scroll-padding-top: 5rem;
 }
 
-/* Minimum 44px touch targets for mobile accessibility */
-.touch-target {
-  min-height: 44px;
-  min-width: 44px;
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #fbfbf9;
+  color: #1a1a1a;
+  overflow-x: hidden;
 }
 
+/* Ensure Devanagari matras are not clipped */
+h1, h2, h3, h4, h5, h6, p, span, button, input, select, textarea {
+  line-height: 1.5;
+}
