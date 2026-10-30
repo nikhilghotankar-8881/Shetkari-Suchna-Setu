@@ -61,12 +61,14 @@ async def create_profile(
 
 
 @router.get("/profile", response_model=ProfileResponse)
+@router.get("/farmer/profile", response_model=ProfileResponse)
 async def get_my_profile(profile: Profile = Depends(get_current_farmer_profile)):
     """Fetch the authenticated farmer's own profile."""
     return profile
 
 
 @router.put("/profile", response_model=ProfileResponse)
+@router.put("/farmer/profile", response_model=ProfileResponse)
 async def update_my_profile(
     payload: ProfileUpdate,
     profile: Profile = Depends(get_current_farmer_profile),
@@ -89,6 +91,7 @@ async def update_my_profile(
 
 
 @router.delete("/profile", status_code=status.HTTP_204_NO_CONTENT)
+@router.delete("/farmer/profile", status_code=status.HTTP_204_NO_CONTENT)
 async def delete_my_profile(
     response: Response,
     profile: Profile = Depends(get_current_farmer_profile),
