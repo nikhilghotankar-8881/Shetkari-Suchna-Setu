@@ -10,6 +10,7 @@ import { InsuranceScreen } from './farmer/insurance/InsuranceScreen';
 import { AlertsScreen } from './farmer/alerts/AlertsScreen';
 import { ProfileScreen } from './farmer/profile/ProfileScreen';
 import { OnboardingFlow } from './farmer/onboarding/OnboardingFlow';
+import { WelcomeScreen } from './farmer/welcome/WelcomeScreen';
 import { ProtectedRoute } from './auth/ProtectedRoute';
 import { useFarmerToken } from './auth/FarmerTokenContext';
 
@@ -35,10 +36,13 @@ export default function App() {
       {/* Root entry point */}
       <Route
         path="/"
-        element={hasProfile ? <Navigate to="/dashboard" replace /> : <Navigate to="/onboarding" replace />}
+        element={hasProfile ? <Navigate to="/dashboard" replace /> : <Navigate to="/welcome" replace />}
       />
 
-      {/* Onboarding Wizard */}
+      {/* Welcome Screen (Language & Introduction) */}
+      <Route path="/welcome" element={<WelcomeScreen />} />
+
+      {/* Onboarding Wizard (4 Steps) */}
       <Route path="/onboarding" element={<OnboardingFlow />} />
 
       {/* Farmer Interface Routes (User Journey) */}
@@ -52,10 +56,10 @@ export default function App() {
         {/* C. Scheme Details */}
         <Route path="/schemes/:id" element={<SchemeDetailScreen />} />
 
-        {/* D. Alerts and Updates Feed (The Core Feature) */}
+        {/* D. Alerts and Updates Feed */}
         <Route path="/updates" element={<UpdatesScreen />} />
 
-        {/* E. Notice Change-Comparison Details (The Signature Feature) */}
+        {/* E. Notice Change-Comparison Details */}
         <Route path="/updates/:id" element={<ChangeComparisonScreen />} />
 
         {/* Supporting Pages */}
