@@ -7,16 +7,7 @@ import { useFarmerToken } from '../../auth/FarmerTokenContext';
 import { useTranslation } from '../../i18n/useTranslation';
 import { MAHARASHTRA_DISTRICTS, CROPS_LIST } from '../../utils/constants';
 import { evaluateEligibility } from '../eligibility/useEligibilityMatch';
-import {
-  Sparkles,
-  Compass,
-  ArrowRight,
-  ShieldCheck,
-  RefreshCw,
-  Droplets,
-  Layers,
-  FileBadge
-} from 'lucide-react';
+import { Sparkles, Compass, RefreshCw, ChevronRight } from 'lucide-react';
 
 export const FarmerDashboard = () => {
   const { profile, token } = useFarmerToken();
@@ -25,8 +16,29 @@ export const FarmerDashboard = () => {
   const [schemes, setSchemes] = useState([]);
   const [updates, setUpdates] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [activeFilter, setActiveFilter] = useState('all');
 
   const currentDistrictObj = MAHARASHTRA_DISTRICTS.find(d => d.id === profile?.district);
+
+  // Formatted district name without clumsy double parentheses
+  const districtName = useMemo(() => {
+    if (!currentDistrictObj) return profile?.district || (lang === 'mr' ? 'महाराष्ट्र' : 'Maharashtra');
+    if (lang === 'mr') {
+      return currentDistrictObj.name_mr.split(' ')[0]; // e.g. "अहिल्यानगर"
+    }
+    return currentDistrictObj.name_en;
+  }, [currentDistrictObj, profile?.district, lang]);
+
+  // Formatted crops text
+  const cropsText = useMemo(() => {
+    if (!profile?.crops || profile.crops.length === 0) {
+      return lang === 'mr' ? 'पिके नोंदवा' : 'Add crops';
+    }
+    return profile.crops.map(cId => {
+      const c = CROPS_LIST.find(item => item.id === cId);
+      return lang === 'mr' ? (c?.name_mr || cId) : (c?.name_en || cId);
+    }).join(', ');
+  }, [profile?.crops, lang]);
 
   useEffect(() => {
     let isMounted = true;
@@ -46,7 +58,7 @@ export const FarmerDashboard = () => {
     return () => { isMounted = false; };
   }, [profile?.district, JSON.stringify(profile?.crops)]);
 
-  // Prioritize schemes with eligibility matching (🟢 > 🟡 > 🔵 > ⚪)
+  // Score & sort schemes
   const rankedSchemes = useMemo(() => {
     return schemes.map(scheme => ({
       ...scheme,
@@ -54,90 +66,79 @@ export const FarmerDashboard = () => {
     })).sort((a, b) => b._match.score - a._match.score);
   }, [schemes, profile]);
 
+  const displayedSchemes = useMemo(() => {
+    if (activeFilter === 'eligible') {
+      return rankedSchemes.filter(s => s._match.status === 'green' || s._match.status === 'blue');
+    }
+    return rankedSchemes;
+  }, [rankedSchemes, activeFilter]);
+
   const recentUpdates = updates.slice(0, 2);
-  const featuredSchemes = rankedSchemes.slice(0, 3);
-  const greenSchemesCount = rankedSchemes.filter(s => s._match.status === 'green').length;
+  const featuredSchemes = displayedSchemes.slice(0, 3);
+  const eligibleCount = rankedSchemes.filter(s => s._match.status === 'green' || s._match.status === 'blue').length;
 
   return (
-    <div className="p-4 max-w-md mx-auto space-y-4">
-      {/* Personalized Header Greeting */}
-      <div className="bg-white rounded-3xl p-4 shadow-xs border border-stone-200/90 space-y-3">
-        <div className="flex items-start justify-between">
-          <div>
-            <h2 className="text-base font-extrabold text-stone-900 leading-tight">
-              {t('dashboard_title')}
-            </h2>
-            <p className="text-xs text-stone-500 mt-0.5">
-              {t('dashboard_subtitle')}
-            </p>
+    <div className="p-3.5 max-w-md mx-auto space-y-3.5">
+      {/* ── 1. CLEAN FARMER IDENTITY BAR ── */}
+      <div className="bg-white rounded-2xl p-3.5 shadow-2xs border border-stone-200/90 flex items-center justify-between">
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="w-10 h-10 rounded-2xl bg-emerald-700 text-white flex items-center justify-center text-lg font-bold shrink-0 shadow-2xs">
+            🌾
           </div>
-          <Link
-            to="/profile"
-            className="text-[11px] font-bold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-xl border border-emerald-200/80 hover:bg-emerald-100 transition-colors"
-          >
-            {lang === 'mr' ? 'बदला' : 'Edit'}
-          </Link>
+          <div className="min-w-0">
+            <div className="text-sm font-extrabold text-stone-900 truncate leading-tight">
+              {profile?.taluka ? `${profile.taluka}, ` : ''}{districtName}
+            </div>
+            <div className="text-xs text-stone-500 font-medium truncate mt-0.5">
+              <span>{profile?.land_area || '१.५'} {lang === 'mr' ? 'एकर' : 'acres'}</span>
+              <span className="mx-1">•</span>
+              <span className="text-emerald-800 font-semibold">{cropsText}</span>
+            </div>
+          </div>
         </div>
 
-        {/* Current Active Farmer Profile summary pill row */}
-        {profile && (
-          <div className="flex flex-wrap items-center gap-1.5 pt-2 border-t border-stone-100 text-[11px]">
-            <Link
-              to="/profile"
-              className="bg-stone-50 px-2.5 py-1 rounded-xl text-stone-700 font-semibold border border-stone-200 hover:border-emerald-300"
-            >
-              📍 {lang === 'mr' ? currentDistrictObj?.name_mr : currentDistrictObj?.name_en || profile.district}
-              {profile.taluka ? ` (${profile.taluka})` : ''}
-            </Link>
-
-            <Link
-              to="/profile"
-              className="bg-stone-50 px-2.5 py-1 rounded-xl text-stone-700 font-semibold border border-stone-200 hover:border-emerald-300"
-            >
-              🌾 {profile.land_area || '1.5'} {t(`land_unit_${profile.land_unit || 'hectare'}`)}
-            </Link>
-
-            <Link
-              to="/profile"
-              className="bg-stone-50 px-2.5 py-1 rounded-xl text-stone-700 font-semibold border border-stone-200 hover:border-emerald-300"
-            >
-              💧 {t(`irrigation_${profile.irrigation || 'yes'}`)}
-            </Link>
-
-            <Link
-              to="/profile"
-              className="bg-stone-50 px-2.5 py-1 rounded-xl text-stone-700 font-semibold border border-stone-200 hover:border-emerald-300"
-            >
-              🆔 {profile.farmer_id ? profile.farmer_id : (lang === 'mr' ? 'आयडी: ऐच्छिक' : 'ID: Optional')}
-            </Link>
-          </div>
-        )}
+        <Link
+          to="/profile"
+          className="text-xs font-bold text-emerald-800 bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-xl border border-emerald-200 transition-colors shrink-0 ml-2"
+        >
+          {lang === 'mr' ? 'बदला' : 'Edit'}
+        </Link>
       </div>
 
-      {/* Purpose / Trust Banner */}
-      <div className="bg-emerald-50 border border-emerald-200/90 rounded-2xl p-3.5 space-y-1.5 shadow-2xs">
-        <div className="flex items-center justify-between text-emerald-950 font-bold text-xs">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
-            <span>{t('potentially_relevant')}</span>
-          </div>
-          <span className="text-[10px] bg-emerald-200/70 text-emerald-950 px-2 py-0.5 rounded-full font-extrabold">
-            {greenSchemesCount} {lang === 'mr' ? 'पात्र योजना' : 'matched'}
-          </span>
-        </div>
-        <p className="text-[11px] text-emerald-900/90 leading-relaxed">
-          {t('not_eligible_notice')}
-        </p>
+      {/* ── 2. QUICK FILTER TABS ── */}
+      <div className="flex items-center gap-2 overflow-x-auto pb-0.5">
+        <button
+          onClick={() => setActiveFilter('all')}
+          className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all touch-target whitespace-nowrap ${
+            activeFilter === 'all'
+              ? 'bg-emerald-800 text-white shadow-2xs'
+              : 'bg-white text-stone-600 border border-stone-200 hover:border-stone-300'
+          }`}
+        >
+          {lang === 'mr' ? 'सर्व योजना' : 'All Schemes'} ({rankedSchemes.length})
+        </button>
+
+        <button
+          onClick={() => setActiveFilter('eligible')}
+          className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all touch-target whitespace-nowrap flex items-center gap-1.5 ${
+            activeFilter === 'eligible'
+              ? 'bg-emerald-800 text-white shadow-2xs'
+              : 'bg-white text-stone-600 border border-stone-200 hover:border-stone-300'
+          }`}
+        >
+          <span className="w-2 h-2 rounded-full bg-emerald-400" />
+          <span>{lang === 'mr' ? 'पात्र योजना' : 'Eligible'} ({eligibleCount})</span>
+        </button>
       </div>
 
-      {/* ── SECTION 1: RELEVANT GOVERNMENT SCHEMES (PRIORITIZED BY MATCH) ── */}
+      {/* ── 3. SCHEMES SECTION (CLEAN CARDS) ── */}
       <section className="space-y-2.5">
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between px-0.5">
           <div className="flex items-center gap-1.5">
             <Compass className="w-4 h-4 text-emerald-700" />
-            <h3 className="text-xs font-extrabold uppercase tracking-wider text-stone-900">
+            <h2 className="text-xs font-extrabold uppercase tracking-wider text-stone-900">
               {t('relevant_schemes_heading')}
-            </h3>
+            </h2>
           </div>
           <Link
             to="/schemes"
@@ -148,15 +149,16 @@ export const FarmerDashboard = () => {
         </div>
 
         {loading ? (
-          <div className="p-6 text-center text-xs text-stone-400">
-            योजना लोड होत आहेत...
+          <div className="py-8 text-center text-xs text-stone-400 flex items-center justify-center gap-2">
+            <RefreshCw className="w-4 h-4 animate-spin text-emerald-600" />
+            <span>{lang === 'mr' ? 'लोड होत आहे...' : 'Loading...'}</span>
           </div>
         ) : featuredSchemes.length === 0 ? (
           <div className="p-4 bg-white rounded-2xl border border-stone-200 text-xs text-stone-500 text-center">
             {t('no_schemes_found')}
           </div>
         ) : (
-          <div className="space-y-3">
+          <div className="space-y-2.5">
             {featuredSchemes.map(s => (
               <SchemeCard key={s.id} scheme={s} />
             ))}
@@ -164,33 +166,25 @@ export const FarmerDashboard = () => {
         )}
       </section>
 
-      {/* ── SECTION 2: RECENT GOVERNMENT NOTICE UPDATES ── */}
-      <section className="space-y-2.5 pt-1">
-        <div className="flex items-center justify-between">
+      {/* ── 4. RECENT GOVERNMENT UPDATES ── */}
+      <section className="space-y-2 pt-1">
+        <div className="flex items-center justify-between px-0.5">
           <div className="flex items-center gap-1.5">
             <Sparkles className="w-4 h-4 text-emerald-700" />
-            <h3 className="text-xs font-extrabold uppercase tracking-wider text-stone-900">
+            <h2 className="text-xs font-extrabold uppercase tracking-wider text-stone-900">
               {t('recent_updates_heading')}
-            </h3>
+            </h2>
           </div>
           <Link
             to="/updates"
-            className="text-xs font-bold text-emerald-800 hover:text-emerald-950 flex items-center gap-0.5"
+            className="text-xs font-bold text-emerald-800 hover:text-emerald-950"
           >
-            <span>{t('view_all_updates')}</span>
+            {t('view_all_updates')}
           </Link>
         </div>
 
-        {loading ? (
-          <div className="p-6 text-center text-xs text-stone-400">
-            अपडेट्स लोड होत आहेत...
-          </div>
-        ) : recentUpdates.length === 0 ? (
-          <div className="p-4 bg-white rounded-2xl border border-stone-200 text-xs text-stone-500 text-center">
-            सध्या नवीन बदल नाहीत.
-          </div>
-        ) : (
-          <div className="space-y-3">
+        {recentUpdates.length > 0 && (
+          <div className="space-y-2">
             {recentUpdates.map(u => (
               <UpdateItem key={u.id} update={u} />
             ))}
@@ -198,29 +192,26 @@ export const FarmerDashboard = () => {
         )}
       </section>
 
-      {/* Crop Insurance Card Banner */}
-      <div className="bg-stone-900 text-white rounded-3xl p-4 shadow-sm space-y-2">
+      {/* ── 5. CROP INSURANCE COMPACT ACTION ── */}
+      <Link
+        to="/insurance"
+        className="block bg-stone-900 text-white rounded-2xl p-3.5 shadow-2xs hover:bg-stone-800 transition-all"
+      >
         <div className="flex items-center justify-between">
-          <span className="text-[10px] uppercase font-bold tracking-wider text-amber-400">
-            प्रधानमंत्री पीक विमा (PMFBY)
-          </span>
-          <span className="text-[10px] text-stone-400">७२ तासांत तक्रार</span>
+          <div className="flex items-center gap-2.5">
+            <span className="text-xl">🌧️</span>
+            <div>
+              <div className="text-xs font-extrabold text-amber-300">
+                {lang === 'mr' ? 'पंतप्रधान पीक विमा योजना (PMFBY)' : 'Pradhan Mantri Fasal Bima (PMFBY)'}
+              </div>
+              <div className="text-[11px] text-stone-300">
+                {lang === 'mr' ? '७२ तासांत पीक नुकसानीची तक्रार करा' : 'Report crop loss within 72 hours'}
+              </div>
+            </div>
+          </div>
+          <ChevronRight className="w-4 h-4 text-stone-400" />
         </div>
-        <h4 className="text-sm font-bold leading-tight">
-          पीक नुकसानीची माहिती नोंदवण्याच्या अधिकृत सूचना
-        </h4>
-        <Link
-          to="/insurance"
-          className="inline-flex items-center gap-1 text-xs font-bold text-emerald-300 hover:text-emerald-200 pt-1"
-        >
-          <span>विमा मार्गदर्शक व अधिकृत पोर्टल →</span>
-        </Link>
-      </div>
-
-      {/* Clear product purpose disclaimer */}
-      <div className="p-3 bg-stone-50 rounded-2xl border border-stone-200 text-[10px] text-stone-500 leading-snug">
-        {t('disclaimer_text')}
-      </div>
+      </Link>
     </div>
   );
 };
