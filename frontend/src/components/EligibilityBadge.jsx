@@ -82,3 +82,4 @@ export const EligibilityBadge = ({ status = 'green', showTooltip = true }) => {
     </div>
   );
 };
+

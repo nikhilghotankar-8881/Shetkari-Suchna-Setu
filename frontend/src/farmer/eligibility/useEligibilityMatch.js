@@ -167,3 +167,4 @@ export function useEligibilityMatch(scheme, profile) {
     return evaluateEligibility(scheme, profile);
   }, [scheme?.id, profile?.district, profile?.land_area, profile?.land_unit, profile?.land_ownership, profile?.irrigation, profile?.farmer_id, JSON.stringify(profile?.crops)]);
 }
+
