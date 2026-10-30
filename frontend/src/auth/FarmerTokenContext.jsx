@@ -23,10 +23,15 @@ export const FarmerTokenProvider = ({ children }) => {
     let savedToken = token;
 
     const payload = {
-      district: profileData.district || 'Pune',
+      district: profileData.district || 'pune',
       taluka: profileData.taluka || '',
       crops: profileData.crops || [],
-      lang: profileData.lang || 'mr'
+      lang: profileData.lang || 'mr',
+      farmer_id: profileData.farmer_id || '',
+      land_area: profileData.land_area || '',
+      land_unit: profileData.land_unit || 'hectare',
+      land_ownership: profileData.land_ownership || 'owner',
+      irrigation: profileData.irrigation || 'yes'
     };
 
     try {
@@ -76,7 +81,7 @@ export const FarmerTokenProvider = ({ children }) => {
     }
     if (!savedProfile) {
       savedProfile = {
-        ...profileData,
+        ...payload,
         id: profile?.id || crypto.randomUUID(),
         created_at: profile?.created_at || new Date().toISOString(),
         last_seen_at: new Date().toISOString()
@@ -130,4 +135,3 @@ export const useFarmerToken = () => {
   }
   return context;
 };
-

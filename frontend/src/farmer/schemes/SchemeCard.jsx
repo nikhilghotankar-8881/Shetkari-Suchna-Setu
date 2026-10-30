@@ -1,16 +1,19 @@
 import { Link } from 'react-router-dom';
 import { ExternalLink, Calendar, Building, CheckCircle, ChevronRight, FileText } from 'lucide-react';
 import { VerificationBadge } from '../../components/VerificationBadge';
-import { SourceLink } from '../../components/SourceLink';
+import { EligibilityBadge } from '../../components/EligibilityBadge';
+import { useEligibilityMatch } from '../eligibility/useEligibilityMatch';
+import { useFarmerToken } from '../../auth/FarmerTokenContext';
 import { useTranslation } from '../../i18n/useTranslation';
 
 export const SchemeCard = ({ scheme }) => {
+  const { profile } = useFarmerToken();
   const { lang, t } = useTranslation();
+  const eligibilityMatch = useEligibilityMatch(scheme, profile);
 
   const isVerified = scheme.verification_status === 'Verified';
   const name = lang === 'mr' ? scheme.name_mr : scheme.name_en;
   const department = lang === 'mr' ? scheme.department_mr : scheme.department_en;
-  const eligibility = lang === 'mr' ? scheme.eligibility_mr : scheme.eligibility_en;
   const benefits = lang === 'mr' ? scheme.benefits_mr : scheme.benefits_en;
 
   // STRICT RULE: Deadline shown ONLY if Verified
@@ -24,13 +27,10 @@ export const SchemeCard = ({ scheme }) => {
 
   return (
     <article className="bg-white rounded-2xl p-4 shadow-xs border border-stone-200/90 hover:border-emerald-400 transition-all space-y-3">
-      {/* Top Header: Badge + Department */}
+      {/* Top Header: Eligibility Status Badge + Verification Badge */}
       <div className="flex flex-wrap items-center justify-between gap-2">
+        <EligibilityBadge status={eligibilityMatch.status} />
         <VerificationBadge status={scheme.verification_status} />
-        <span className="text-[11px] font-medium text-stone-500 flex items-center gap-1 truncate max-w-[190px]">
-          <Building className="w-3 h-3 text-stone-400 shrink-0" />
-          {department}
-        </span>
       </div>
 
       {/* Scheme Title */}
@@ -39,6 +39,12 @@ export const SchemeCard = ({ scheme }) => {
           {name}
         </Link>
       </h3>
+
+      {/* Department Line */}
+      <div className="text-[11px] font-medium text-stone-500 flex items-center gap-1 truncate">
+        <Building className="w-3 h-3 text-stone-400 shrink-0" />
+        <span className="truncate">{department}</span>
+      </div>
 
       {/* Deadline Box - STRICT RULE: Deadline shown ONLY if Verified */}
       <div className={`p-2 rounded-xl flex items-center gap-2 text-xs ${
@@ -83,7 +89,7 @@ export const SchemeCard = ({ scheme }) => {
             className="text-[11px] font-medium text-stone-500 hover:text-emerald-800 flex items-center gap-1 touch-target"
             title="View original government resolution"
           >
-            <span>{lang === 'mr' ? 'मूळ GR' : 'Original GR'}</span>
+            <span>{lang === 'mr' ? 'अधिकृत GR' : 'Official GR'}</span>
             <ExternalLink className="w-3 h-3" />
           </a>
         )}

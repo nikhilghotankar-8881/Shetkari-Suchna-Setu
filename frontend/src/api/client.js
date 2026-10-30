@@ -21,6 +21,8 @@ function normalizeScheme(s) {
     name_en: s.name_en || s.scheme_name || 'Government Agricultural Scheme',
     department_mr: s.department_mr || s.department || 'कृषी विभाग, महाराष्ट्र शासन',
     department_en: s.department_en || s.department || 'Department of Agriculture, Maharashtra',
+    category_mr: s.category_mr || 'कृषी योजना',
+    category_en: s.category_en || 'Agricultural Scheme',
     eligibility_mr: s.eligibility_mr || s.eligibility || 'अधिकृत अधिसूचनेनुसार पात्रता पहावी',
     eligibility_en: s.eligibility_en || s.eligibility || 'Refer to official notice for eligibility',
     benefits_mr: s.benefits_mr || s.benefits || 'अनुदान व आर्थिक साहाय्य',
@@ -28,7 +30,8 @@ function normalizeScheme(s) {
     verification_status: s.verification_status || s.verification_badge || 'Auto-checked',
     official_link: s.official_link || s.official_application_link || s.source_url || 'https://krishi.maharashtra.gov.in',
     crops: s.crops || [],
-    districts: s.districts || s.regions || []
+    districts: s.districts || s.regions || [],
+    required_docs: s.required_docs || ['7/12', '8-a', 'farmer_id']
   };
 }
 
@@ -51,7 +54,7 @@ function normalizeNotice(u) {
 
 export const api = {
   // ── Schemes ───────────────────────────────────────────
-  async getSchemes({ district, crops, search, category, token } = {}) {
+  async getSchemes({ district, crops, search, category, filterStrict = false, token } = {}) {
     try {
       const query = new URLSearchParams();
       if (district) query.append('district', district);
@@ -68,20 +71,24 @@ export const api = {
       if (Array.isArray(data) && data.length > 0) {
         return data.map(normalizeScheme);
       }
-      // If backend returns empty list (e.g. fresh DB before seeding), use fallback
       return MOCK_SCHEMES.map(normalizeScheme);
     } catch (err) {
       if (import.meta.env.DEV) console.warn('Using mock schemes fallback:', err.message);
       return MOCK_SCHEMES.filter(scheme => {
-        const districtMatch = !district || scheme.districts.length === 0 || scheme.districts.includes(district);
-        const cropMatch = !crops || crops.length === 0 || scheme.crops.length === 0 || scheme.crops.some(c => crops.includes(c));
+        if (filterStrict) {
+          const districtMatch = !district || scheme.districts.length === 0 || scheme.districts.includes(district);
+          const cropMatch = !crops || crops.length === 0 || scheme.crops.length === 0 || scheme.crops.some(c => crops.includes(c));
+          if (!districtMatch || !cropMatch) return false;
+        }
         const categoryMatch = !category || scheme.category_mr === category || scheme.category_en === category;
         const searchMatch = !search ||
           scheme.name_mr.toLowerCase().includes(search.toLowerCase()) ||
           scheme.name_en.toLowerCase().includes(search.toLowerCase()) ||
           scheme.department_mr.toLowerCase().includes(search.toLowerCase()) ||
-          scheme.department_en.toLowerCase().includes(search.toLowerCase());
-        return districtMatch && cropMatch && categoryMatch && searchMatch;
+          scheme.department_en.toLowerCase().includes(search.toLowerCase()) ||
+          (scheme.category_en && scheme.category_en.toLowerCase().includes(search.toLowerCase())) ||
+          (scheme.category_mr && scheme.category_mr.toLowerCase().includes(search.toLowerCase()));
+        return categoryMatch && searchMatch;
       }).map(normalizeScheme);
     }
   },
@@ -318,4 +325,3 @@ export const api = {
     }
   }
 };
-

@@ -1,0 +1,3903 @@
+{
+  "nodes": [
+    {
+      "id": "file:backend/app/config.py",
+      "type": "file",
+      "name": "backend/app/config.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/config.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/config.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/core/dependencies.py",
+      "type": "file",
+      "name": "backend/app/core/dependencies.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/core/dependencies.py:get_current_farmer_profile",
+      "type": "function",
+      "name": "get_current_farmer_profile",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/dependencies.py",
+        "lineno": 16
+      }
+    },
+    {
+      "id": "func:backend/app/core/dependencies.py:get_current_admin_user",
+      "type": "function",
+      "name": "get_current_admin_user",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/dependencies.py",
+        "lineno": 55
+      }
+    },
+    {
+      "id": "func:backend/app/core/dependencies.py:require_role",
+      "type": "function",
+      "name": "require_role",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/dependencies.py",
+        "lineno": 91
+      }
+    },
+    {
+      "id": "func:backend/app/core/dependencies.py:role_checker",
+      "type": "function",
+      "name": "role_checker",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/dependencies.py",
+        "lineno": 96
+      }
+    },
+    {
+      "id": "func:backend/app/core/dependencies.py:log_audit_event",
+      "type": "function",
+      "name": "log_audit_event",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/dependencies.py",
+        "lineno": 107
+      }
+    },
+    {
+      "id": "table:profiles",
+      "type": "table",
+      "name": "profiles",
+      "source_system": "inferred_from_code",
+      "metadata": {
+        "inferred": true
+      }
+    },
+    {
+      "id": "table:unresolved",
+      "type": "table",
+      "name": "unresolved",
+      "source_system": "inferred_from_code",
+      "metadata": {
+        "inferred": true
+      }
+    },
+    {
+      "id": "table:users",
+      "type": "table",
+      "name": "users",
+      "source_system": "inferred_from_code",
+      "metadata": {
+        "inferred": true
+      }
+    },
+    {
+      "id": "file:backend/app/core/security.py",
+      "type": "file",
+      "name": "backend/app/core/security.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/core/security.py:generate_profile_token",
+      "type": "function",
+      "name": "generate_profile_token",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/security.py",
+        "lineno": 10
+      }
+    },
+    {
+      "id": "func:backend/app/core/security.py:hash_token",
+      "type": "function",
+      "name": "hash_token",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/security.py",
+        "lineno": 15
+      }
+    },
+    {
+      "id": "func:backend/app/core/security.py:verify_password",
+      "type": "function",
+      "name": "verify_password",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/security.py",
+        "lineno": 20
+      }
+    },
+    {
+      "id": "func:backend/app/core/security.py:get_password_hash",
+      "type": "function",
+      "name": "get_password_hash",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/security.py",
+        "lineno": 29
+      }
+    },
+    {
+      "id": "func:backend/app/core/security.py:create_access_token",
+      "type": "function",
+      "name": "create_access_token",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/security.py",
+        "lineno": 36
+      }
+    },
+    {
+      "id": "func:backend/app/core/security.py:decode_access_token",
+      "type": "function",
+      "name": "decode_access_token",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/core/security.py",
+        "lineno": 47
+      }
+    },
+    {
+      "id": "file:backend/app/database.py",
+      "type": "file",
+      "name": "backend/app/database.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/database.py:get_db",
+      "type": "function",
+      "name": "get_db",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/database.py",
+        "lineno": 23
+      }
+    },
+    {
+      "id": "func:backend/app/database.py:init_db",
+      "type": "function",
+      "name": "init_db",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/database.py",
+        "lineno": 36
+      }
+    },
+    {
+      "id": "file:backend/app/main.py",
+      "type": "file",
+      "name": "backend/app/main.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/main.py:dispatch",
+      "type": "function",
+      "name": "dispatch",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/main.py",
+        "lineno": 21
+      }
+    },
+    {
+      "id": "func:backend/app/main.py:seed_initial_data",
+      "type": "function",
+      "name": "seed_initial_data",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/main.py",
+        "lineno": 29
+      }
+    },
+    {
+      "id": "func:backend/app/main.py:lifespan",
+      "type": "function",
+      "name": "lifespan",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/main.py",
+        "lineno": 83
+      }
+    },
+    {
+      "id": "table:sources",
+      "type": "table",
+      "name": "sources",
+      "source_system": "inferred_from_code",
+      "metadata": {
+        "inferred": true
+      }
+    },
+    {
+      "id": "file:backend/app/models/alert.py",
+      "type": "file",
+      "name": "backend/app/models/alert.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/models/alert.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/models/alert.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/models/audit.py",
+      "type": "file",
+      "name": "backend/app/models/audit.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/models/audit.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/models/audit.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/models/extraction.py",
+      "type": "file",
+      "name": "backend/app/models/extraction.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/models/extraction.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/models/extraction.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/models/notice.py",
+      "type": "file",
+      "name": "backend/app/models/notice.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/models/notice.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/models/notice.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/models/profile.py",
+      "type": "file",
+      "name": "backend/app/models/profile.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/models/profile.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/models/profile.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/models/scheme.py",
+      "type": "file",
+      "name": "backend/app/models/scheme.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/models/scheme.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/models/scheme.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/models/snapshot.py",
+      "type": "file",
+      "name": "backend/app/models/snapshot.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/models/snapshot.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/models/snapshot.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/models/source.py",
+      "type": "file",
+      "name": "backend/app/models/source.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/models/source.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/models/source.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/models/user.py",
+      "type": "file",
+      "name": "backend/app/models/user.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/models/user.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/models/user.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/models/__init__.py",
+      "type": "file",
+      "name": "backend/app/models/__init__.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/models/__init__.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/models/__init__.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/routers/admin.py",
+      "type": "file",
+      "name": "backend/app/routers/admin.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/routers/admin.py:admin_login",
+      "type": "function",
+      "name": "admin_login",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 30
+      }
+    },
+    {
+      "id": "func:backend/app/routers/admin.py:list_sources",
+      "type": "function",
+      "name": "list_sources",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 66
+      }
+    },
+    {
+      "id": "func:backend/app/routers/admin.py:create_source",
+      "type": "function",
+      "name": "create_source",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 77
+      }
+    },
+    {
+      "id": "func:backend/app/routers/admin.py:trigger_source_poll",
+      "type": "function",
+      "name": "trigger_source_poll",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 107
+      }
+    },
+    {
+      "id": "func:backend/app/routers/admin.py:get_review_queue",
+      "type": "function",
+      "name": "get_review_queue",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 250
+      }
+    },
+    {
+      "id": "func:backend/app/routers/admin.py:submit_review_decision",
+      "type": "function",
+      "name": "submit_review_decision",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 297
+      }
+    },
+    {
+      "id": "func:backend/app/routers/admin.py:list_audit_logs",
+      "type": "function",
+      "name": "list_audit_logs",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 384
+      }
+    },
+    {
+      "id": "func:backend/app/routers/admin.py:get_system_metrics",
+      "type": "function",
+      "name": "get_system_metrics",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 396
+      }
+    },
+    {
+      "id": "table:snapshots",
+      "type": "table",
+      "name": "snapshots",
+      "source_system": "inferred_from_code",
+      "metadata": {
+        "inferred": true
+      }
+    },
+    {
+      "id": "table:notices",
+      "type": "table",
+      "name": "notices",
+      "source_system": "inferred_from_code",
+      "metadata": {
+        "inferred": true
+      }
+    },
+    {
+      "id": "table:noticeversions",
+      "type": "table",
+      "name": "noticeversions",
+      "source_system": "inferred_from_code",
+      "metadata": {
+        "inferred": true
+      }
+    },
+    {
+      "id": "table:alerts",
+      "type": "table",
+      "name": "alerts",
+      "source_system": "inferred_from_code",
+      "metadata": {
+        "inferred": true
+      }
+    },
+    {
+      "id": "table:auditlogs",
+      "type": "table",
+      "name": "auditlogs",
+      "source_system": "inferred_from_code",
+      "metadata": {
+        "inferred": true
+      }
+    },
+    {
+      "id": "file:backend/app/routers/farmer.py",
+      "type": "file",
+      "name": "backend/app/routers/farmer.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/routers/farmer.py:create_profile",
+      "type": "function",
+      "name": "create_profile",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 23
+      }
+    },
+    {
+      "id": "func:backend/app/routers/farmer.py:get_my_profile",
+      "type": "function",
+      "name": "get_my_profile",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 64
+      }
+    },
+    {
+      "id": "func:backend/app/routers/farmer.py:update_my_profile",
+      "type": "function",
+      "name": "update_my_profile",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 70
+      }
+    },
+    {
+      "id": "func:backend/app/routers/farmer.py:delete_my_profile",
+      "type": "function",
+      "name": "delete_my_profile",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 92
+      }
+    },
+    {
+      "id": "func:backend/app/routers/farmer.py:get_matched_schemes",
+      "type": "function",
+      "name": "get_matched_schemes",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 108
+      }
+    },
+    {
+      "id": "func:backend/app/routers/farmer.py:get_farmer_alerts",
+      "type": "function",
+      "name": "get_farmer_alerts",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 174
+      }
+    },
+    {
+      "id": "func:backend/app/routers/farmer.py:mark_alert_as_read",
+      "type": "function",
+      "name": "mark_alert_as_read",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 224
+      }
+    },
+    {
+      "id": "file:backend/app/routers/health.py",
+      "type": "file",
+      "name": "backend/app/routers/health.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/routers/health.py:health_check",
+      "type": "function",
+      "name": "health_check",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/health.py",
+        "lineno": 12
+      }
+    },
+    {
+      "id": "file:backend/app/routers/public.py",
+      "type": "file",
+      "name": "backend/app/routers/public.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/routers/public.py:list_public_sources",
+      "type": "function",
+      "name": "list_public_sources",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 16
+      }
+    },
+    {
+      "id": "func:backend/app/routers/public.py:list_public_schemes",
+      "type": "function",
+      "name": "list_public_schemes",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 24
+      }
+    },
+    {
+      "id": "func:backend/app/routers/public.py:get_public_scheme_by_id",
+      "type": "function",
+      "name": "get_public_scheme_by_id",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 92
+      }
+    },
+    {
+      "id": "func:backend/app/routers/public.py:get_crop_insurance_info",
+      "type": "function",
+      "name": "get_crop_insurance_info",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 141
+      }
+    },
+    {
+      "id": "func:backend/app/routers/public.py:get_latest_notices",
+      "type": "function",
+      "name": "get_latest_notices",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 171
+      }
+    },
+    {
+      "id": "file:backend/app/routers/__init__.py",
+      "type": "file",
+      "name": "backend/app/routers/__init__.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/routers/__init__.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/routers/__init__.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/schemas/alert.py",
+      "type": "file",
+      "name": "backend/app/schemas/alert.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/schemas/alert.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/schemas/alert.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/schemas/extraction.py",
+      "type": "file",
+      "name": "backend/app/schemas/extraction.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/schemas/extraction.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/schemas/extraction.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/schemas/notice.py",
+      "type": "file",
+      "name": "backend/app/schemas/notice.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/schemas/notice.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/schemas/notice.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/schemas/profile.py",
+      "type": "file",
+      "name": "backend/app/schemas/profile.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/schemas/profile.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/schemas/profile.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/schemas/source.py",
+      "type": "file",
+      "name": "backend/app/schemas/source.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/schemas/source.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/schemas/source.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/schemas/user.py",
+      "type": "file",
+      "name": "backend/app/schemas/user.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/schemas/user.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/schemas/user.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/schemas/__init__.py",
+      "type": "file",
+      "name": "backend/app/schemas/__init__.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/schemas/__init__.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/schemas/__init__.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/app/services/detector.py",
+      "type": "file",
+      "name": "backend/app/services/detector.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/services/detector.py:compute_content_hash",
+      "type": "function",
+      "name": "compute_content_hash",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/services/detector.py",
+        "lineno": 6
+      }
+    },
+    {
+      "id": "func:backend/app/services/detector.py:compute_text_diff",
+      "type": "function",
+      "name": "compute_text_diff",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/services/detector.py",
+        "lineno": 11
+      }
+    },
+    {
+      "id": "func:backend/app/services/detector.py:is_significant_change",
+      "type": "function",
+      "name": "is_significant_change",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/services/detector.py",
+        "lineno": 37
+      }
+    },
+    {
+      "id": "file:backend/app/services/fetcher.py",
+      "type": "file",
+      "name": "backend/app/services/fetcher.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/services/fetcher.py:fetch_source_content",
+      "type": "function",
+      "name": "fetch_source_content",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/services/fetcher.py",
+        "lineno": 11
+      }
+    },
+    {
+      "id": "file:backend/app/services/matcher.py",
+      "type": "file",
+      "name": "backend/app/services/matcher.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/services/matcher.py:is_potentially_relevant",
+      "type": "function",
+      "name": "is_potentially_relevant",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/services/matcher.py",
+        "lineno": 4
+      }
+    },
+    {
+      "id": "file:backend/app/services/normalizer.py",
+      "type": "file",
+      "name": "backend/app/services/normalizer.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/services/normalizer.py:convert_devanagari_digits",
+      "type": "function",
+      "name": "convert_devanagari_digits",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/services/normalizer.py",
+        "lineno": 9
+      }
+    },
+    {
+      "id": "func:backend/app/services/normalizer.py:normalize_html",
+      "type": "function",
+      "name": "normalize_html",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/services/normalizer.py",
+        "lineno": 16
+      }
+    },
+    {
+      "id": "func:backend/app/services/normalizer.py:normalize_source_text",
+      "type": "function",
+      "name": "normalize_source_text",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/services/normalizer.py",
+        "lineno": 46
+      }
+    },
+    {
+      "id": "file:backend/app/services/validator.py",
+      "type": "file",
+      "name": "backend/app/services/validator.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/services/validator.py:validate_extraction_rules",
+      "type": "function",
+      "name": "validate_extraction_rules",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/services/validator.py",
+        "lineno": 15
+      }
+    },
+    {
+      "id": "file:backend/app/__init__.py",
+      "type": "file",
+      "name": "backend/app/__init__.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/app/__init__.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/app/__init__.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/start.py",
+      "type": "file",
+      "name": "backend/start.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/start.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/start.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:backend/tests/conftest.py",
+      "type": "file",
+      "name": "backend/tests/conftest.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/tests/conftest.py:db_session",
+      "type": "function",
+      "name": "db_session",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/conftest.py",
+        "lineno": 19
+      }
+    },
+    {
+      "id": "func:backend/tests/conftest.py:client",
+      "type": "function",
+      "name": "client",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/conftest.py",
+        "lineno": 31
+      }
+    },
+    {
+      "id": "func:backend/tests/conftest.py:override_get_db",
+      "type": "function",
+      "name": "override_get_db",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/conftest.py",
+        "lineno": 32
+      }
+    },
+    {
+      "id": "file:backend/tests/test_api_endpoints.py",
+      "type": "file",
+      "name": "backend/tests/test_api_endpoints.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/tests/test_api_endpoints.py:test_health_check",
+      "type": "function",
+      "name": "test_health_check",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_api_endpoints.py",
+        "lineno": 8
+      }
+    },
+    {
+      "id": "func:backend/tests/test_api_endpoints.py:test_anonymous_farmer_profile_lifecycle",
+      "type": "function",
+      "name": "test_anonymous_farmer_profile_lifecycle",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_api_endpoints.py",
+        "lineno": 17
+      }
+    },
+    {
+      "id": "func:backend/tests/test_api_endpoints.py:test_admin_auth_and_rbac",
+      "type": "function",
+      "name": "test_admin_auth_and_rbac",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_api_endpoints.py",
+        "lineno": 61
+      }
+    },
+    {
+      "id": "file:backend/tests/test_auth_and_security.py",
+      "type": "file",
+      "name": "backend/tests/test_auth_and_security.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/tests/test_auth_and_security.py:test_farmer_anonymous_token",
+      "type": "function",
+      "name": "test_farmer_anonymous_token",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_auth_and_security.py",
+        "lineno": 13
+      }
+    },
+    {
+      "id": "func:backend/tests/test_auth_and_security.py:test_admin_password_hashing",
+      "type": "function",
+      "name": "test_admin_password_hashing",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_auth_and_security.py",
+        "lineno": 28
+      }
+    },
+    {
+      "id": "func:backend/tests/test_auth_and_security.py:test_admin_jwt_lifecycle",
+      "type": "function",
+      "name": "test_admin_jwt_lifecycle",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_auth_and_security.py",
+        "lineno": 37
+      }
+    },
+    {
+      "id": "func:backend/tests/test_auth_and_security.py:test_expired_jwt_rejected",
+      "type": "function",
+      "name": "test_expired_jwt_rejected",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_auth_and_security.py",
+        "lineno": 48
+      }
+    },
+    {
+      "id": "file:backend/tests/test_detector.py",
+      "type": "file",
+      "name": "backend/tests/test_detector.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/tests/test_detector.py:test_hash_consistency",
+      "type": "function",
+      "name": "test_hash_consistency",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_detector.py",
+        "lineno": 4
+      }
+    },
+    {
+      "id": "func:backend/tests/test_detector.py:test_seeded_change_detection",
+      "type": "function",
+      "name": "test_seeded_change_detection",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_detector.py",
+        "lineno": 10
+      }
+    },
+    {
+      "id": "func:backend/tests/test_detector.py:test_no_change_when_identical",
+      "type": "function",
+      "name": "test_no_change_when_identical",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_detector.py",
+        "lineno": 30
+      }
+    },
+    {
+      "id": "file:backend/tests/test_matcher.py",
+      "type": "file",
+      "name": "backend/tests/test_matcher.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/tests/test_matcher.py:test_statewide_and_all_crops_matches_any_farmer",
+      "type": "function",
+      "name": "test_statewide_and_all_crops_matches_any_farmer",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_matcher.py",
+        "lineno": 4
+      }
+    },
+    {
+      "id": "func:backend/tests/test_matcher.py:test_district_match",
+      "type": "function",
+      "name": "test_district_match",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_matcher.py",
+        "lineno": 13
+      }
+    },
+    {
+      "id": "func:backend/tests/test_matcher.py:test_crop_intersection_match",
+      "type": "function",
+      "name": "test_crop_intersection_match",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_matcher.py",
+        "lineno": 24
+      }
+    },
+    {
+      "id": "file:backend/tests/test_normalizer.py",
+      "type": "file",
+      "name": "backend/tests/test_normalizer.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/tests/test_normalizer.py:test_convert_devanagari_digits",
+      "type": "function",
+      "name": "test_convert_devanagari_digits",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_normalizer.py",
+        "lineno": 4
+      }
+    },
+    {
+      "id": "func:backend/tests/test_normalizer.py:test_normalize_html_removes_scripts_nav",
+      "type": "function",
+      "name": "test_normalize_html_removes_scripts_nav",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_normalizer.py",
+        "lineno": 13
+      }
+    },
+    {
+      "id": "file:backend/tests/test_validator.py",
+      "type": "file",
+      "name": "backend/tests/test_validator.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/tests/test_validator.py:test_valid_extraction_passes_to_auto_checked",
+      "type": "function",
+      "name": "test_valid_extraction_passes_to_auto_checked",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_validator.py",
+        "lineno": 4
+      }
+    },
+    {
+      "id": "func:backend/tests/test_validator.py:test_fabricated_quote_fails_and_flags_needs_review",
+      "type": "function",
+      "name": "test_fabricated_quote_fails_and_flags_needs_review",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_validator.py",
+        "lineno": 35
+      }
+    },
+    {
+      "id": "func:backend/tests/test_validator.py:test_conflicting_deadlines_flags_needs_review",
+      "type": "function",
+      "name": "test_conflicting_deadlines_flags_needs_review",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/test_validator.py",
+        "lineno": 59
+      }
+    },
+    {
+      "id": "file:backend/tests/__init__.py",
+      "type": "file",
+      "name": "backend/tests/__init__.py",
+      "source_system": "python"
+    },
+    {
+      "id": "func:backend/tests/__init__.py:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "python",
+      "metadata": {
+        "file": "backend/tests/__init__.py",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:frontend/public/sw.js",
+      "type": "file",
+      "name": "frontend/public/sw.js",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/public/sw.js:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/public/sw.js",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:frontend/src/admin/audit/AuditLog.jsx",
+      "type": "file",
+      "name": "frontend/src/admin/audit/AuditLog.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/admin/audit/AuditLog.jsx:AuditLog",
+      "type": "function",
+      "name": "AuditLog",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/audit/AuditLog.jsx",
+        "lineno": 6
+      }
+    },
+    {
+      "id": "func:frontend/src/admin/audit/AuditLog.jsx:fetchLogs",
+      "type": "function",
+      "name": "fetchLogs",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/audit/AuditLog.jsx",
+        "lineno": 11
+      }
+    },
+    {
+      "id": "file:frontend/src/admin/layout/AdminLayout.jsx",
+      "type": "file",
+      "name": "frontend/src/admin/layout/AdminLayout.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/admin/layout/AdminLayout.jsx:AdminLayout",
+      "type": "function",
+      "name": "AdminLayout",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/layout/AdminLayout.jsx",
+        "lineno": 5
+      }
+    },
+    {
+      "id": "func:frontend/src/admin/layout/AdminLayout.jsx:handleLogout",
+      "type": "function",
+      "name": "handleLogout",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/layout/AdminLayout.jsx",
+        "lineno": 9
+      }
+    },
+    {
+      "id": "file:frontend/src/admin/login/LoginPage.jsx",
+      "type": "file",
+      "name": "frontend/src/admin/login/LoginPage.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/admin/login/LoginPage.jsx:LoginPage",
+      "type": "function",
+      "name": "LoginPage",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/login/LoginPage.jsx",
+        "lineno": 6
+      }
+    },
+    {
+      "id": "func:frontend/src/admin/login/LoginPage.jsx:handleInitialLogin",
+      "type": "function",
+      "name": "handleInitialLogin",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/login/LoginPage.jsx",
+        "lineno": 16
+      }
+    },
+    {
+      "id": "func:frontend/src/admin/login/LoginPage.jsx:handleMfaSubmit",
+      "type": "function",
+      "name": "handleMfaSubmit",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/login/LoginPage.jsx",
+        "lineno": 32
+      }
+    },
+    {
+      "id": "file:frontend/src/admin/metrics/MetricsPanel.jsx",
+      "type": "file",
+      "name": "frontend/src/admin/metrics/MetricsPanel.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/admin/metrics/MetricsPanel.jsx:MetricsPanel",
+      "type": "function",
+      "name": "MetricsPanel",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/metrics/MetricsPanel.jsx",
+        "lineno": 6
+      }
+    },
+    {
+      "id": "file:frontend/src/admin/review/ReviewQueue.jsx",
+      "type": "file",
+      "name": "frontend/src/admin/review/ReviewQueue.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/admin/review/ReviewQueue.jsx:ReviewQueue",
+      "type": "function",
+      "name": "ReviewQueue",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/review/ReviewQueue.jsx",
+        "lineno": 6
+      }
+    },
+    {
+      "id": "func:frontend/src/admin/review/ReviewQueue.jsx:fetchQueue",
+      "type": "function",
+      "name": "fetchQueue",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/review/ReviewQueue.jsx",
+        "lineno": 12
+      }
+    },
+    {
+      "id": "func:frontend/src/admin/review/ReviewQueue.jsx:handleApprove",
+      "type": "function",
+      "name": "handleApprove",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/review/ReviewQueue.jsx",
+        "lineno": 23
+      }
+    },
+    {
+      "id": "func:frontend/src/admin/review/ReviewQueue.jsx:handleReject",
+      "type": "function",
+      "name": "handleReject",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/review/ReviewQueue.jsx",
+        "lineno": 30
+      }
+    },
+    {
+      "id": "file:frontend/src/admin/sources/SourcesTable.jsx",
+      "type": "file",
+      "name": "frontend/src/admin/sources/SourcesTable.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/admin/sources/SourcesTable.jsx:SourcesTable",
+      "type": "function",
+      "name": "SourcesTable",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/sources/SourcesTable.jsx",
+        "lineno": 6
+      }
+    },
+    {
+      "id": "func:frontend/src/admin/sources/SourcesTable.jsx:fetchSources",
+      "type": "function",
+      "name": "fetchSources",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/admin/sources/SourcesTable.jsx",
+        "lineno": 11
+      }
+    },
+    {
+      "id": "file:frontend/src/api/client.js",
+      "type": "file",
+      "name": "frontend/src/api/client.js",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/api/client.js:normalizeScheme",
+      "type": "function",
+      "name": "normalizeScheme",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 14
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:normalizeNotice",
+      "type": "function",
+      "name": "normalizeNotice",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 36
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:getSchemes",
+      "type": "function",
+      "name": "getSchemes",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 54
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:getSchemeById",
+      "type": "function",
+      "name": "getSchemeById",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 89
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:getNoticeUpdates",
+      "type": "function",
+      "name": "getNoticeUpdates",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 105
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:getNoticeUpdateById",
+      "type": "function",
+      "name": "getNoticeUpdateById",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 130
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:getAlerts",
+      "type": "function",
+      "name": "getAlerts",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 144
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:markAlertRead",
+      "type": "function",
+      "name": "markAlertRead",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 159
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:getInsuranceInfo",
+      "type": "function",
+      "name": "getInsuranceInfo",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 175
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:getSources",
+      "type": "function",
+      "name": "getSources",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 191
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:triggerSourcePoll",
+      "type": "function",
+      "name": "triggerSourcePoll",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 204
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:getReviewQueue",
+      "type": "function",
+      "name": "getReviewQueue",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 213
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:approveExtraction",
+      "type": "function",
+      "name": "approveExtraction",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 245
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:rejectExtraction",
+      "type": "function",
+      "name": "rejectExtraction",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 265
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:getAuditLog",
+      "type": "function",
+      "name": "getAuditLog",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 285
+      }
+    },
+    {
+      "id": "func:frontend/src/api/client.js:getMetrics",
+      "type": "function",
+      "name": "getMetrics",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/client.js",
+        "lineno": 302
+      }
+    },
+    {
+      "id": "file:frontend/src/api/mockData.js",
+      "type": "file",
+      "name": "frontend/src/api/mockData.js",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/api/mockData.js:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/api/mockData.js",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:frontend/src/App.jsx",
+      "type": "file",
+      "name": "frontend/src/App.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/App.jsx:AdminLoadingFallback",
+      "type": "function",
+      "name": "AdminLoadingFallback",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/App.jsx",
+        "lineno": 24
+      }
+    },
+    {
+      "id": "func:frontend/src/App.jsx:App",
+      "type": "function",
+      "name": "App",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/App.jsx",
+        "lineno": 30
+      }
+    },
+    {
+      "id": "file:frontend/src/auth/AdminAuthContext.jsx",
+      "type": "file",
+      "name": "frontend/src/auth/AdminAuthContext.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/auth/AdminAuthContext.jsx:AdminAuthProvider",
+      "type": "function",
+      "name": "AdminAuthProvider",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/auth/AdminAuthContext.jsx",
+        "lineno": 7
+      }
+    },
+    {
+      "id": "func:frontend/src/auth/AdminAuthContext.jsx:login",
+      "type": "function",
+      "name": "login",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/auth/AdminAuthContext.jsx",
+        "lineno": 40
+      }
+    },
+    {
+      "id": "func:frontend/src/auth/AdminAuthContext.jsx:verifyMFA",
+      "type": "function",
+      "name": "verifyMFA",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/auth/AdminAuthContext.jsx",
+        "lineno": 84
+      }
+    },
+    {
+      "id": "func:frontend/src/auth/AdminAuthContext.jsx:logout",
+      "type": "function",
+      "name": "logout",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/auth/AdminAuthContext.jsx",
+        "lineno": 102
+      }
+    },
+    {
+      "id": "func:frontend/src/auth/AdminAuthContext.jsx:useAdminAuth",
+      "type": "function",
+      "name": "useAdminAuth",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/auth/AdminAuthContext.jsx",
+        "lineno": 129
+      }
+    },
+    {
+      "id": "file:frontend/src/auth/FarmerTokenContext.jsx",
+      "type": "file",
+      "name": "frontend/src/auth/FarmerTokenContext.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/auth/FarmerTokenContext.jsx:FarmerTokenProvider",
+      "type": "function",
+      "name": "FarmerTokenProvider",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/auth/FarmerTokenContext.jsx",
+        "lineno": 7
+      }
+    },
+    {
+      "id": "func:frontend/src/auth/FarmerTokenContext.jsx:saveProfile",
+      "type": "function",
+      "name": "saveProfile",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/auth/FarmerTokenContext.jsx",
+        "lineno": 21
+      }
+    },
+    {
+      "id": "func:frontend/src/auth/FarmerTokenContext.jsx:deleteProfile",
+      "type": "function",
+      "name": "deleteProfile",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/auth/FarmerTokenContext.jsx",
+        "lineno": 93
+      }
+    },
+    {
+      "id": "func:frontend/src/auth/FarmerTokenContext.jsx:useFarmerToken",
+      "type": "function",
+      "name": "useFarmerToken",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/auth/FarmerTokenContext.jsx",
+        "lineno": 126
+      }
+    },
+    {
+      "id": "file:frontend/src/auth/ProtectedRoute.jsx",
+      "type": "file",
+      "name": "frontend/src/auth/ProtectedRoute.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/auth/ProtectedRoute.jsx:ProtectedRoute",
+      "type": "function",
+      "name": "ProtectedRoute",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/auth/ProtectedRoute.jsx",
+        "lineno": 4
+      }
+    },
+    {
+      "id": "file:frontend/src/components/LanguageToggle.jsx",
+      "type": "file",
+      "name": "frontend/src/components/LanguageToggle.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/components/LanguageToggle.jsx:LanguageToggle",
+      "type": "function",
+      "name": "LanguageToggle",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/components/LanguageToggle.jsx",
+        "lineno": 4
+      }
+    },
+    {
+      "id": "file:frontend/src/components/OfflineBanner.jsx",
+      "type": "file",
+      "name": "frontend/src/components/OfflineBanner.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/components/OfflineBanner.jsx:OfflineBanner",
+      "type": "function",
+      "name": "OfflineBanner",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/components/OfflineBanner.jsx",
+        "lineno": 5
+      }
+    },
+    {
+      "id": "file:frontend/src/components/SourceLink.jsx",
+      "type": "file",
+      "name": "frontend/src/components/SourceLink.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/components/SourceLink.jsx:SourceLink",
+      "type": "function",
+      "name": "SourceLink",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/components/SourceLink.jsx",
+        "lineno": 4
+      }
+    },
+    {
+      "id": "file:frontend/src/components/VerificationBadge.jsx",
+      "type": "file",
+      "name": "frontend/src/components/VerificationBadge.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/components/VerificationBadge.jsx:VerificationBadge",
+      "type": "function",
+      "name": "VerificationBadge",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/components/VerificationBadge.jsx",
+        "lineno": 4
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/alerts/AlertsScreen.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/alerts/AlertsScreen.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/alerts/AlertsScreen.jsx:AlertsScreen",
+      "type": "function",
+      "name": "AlertsScreen",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/alerts/AlertsScreen.jsx",
+        "lineno": 8
+      }
+    },
+    {
+      "id": "func:frontend/src/farmer/alerts/AlertsScreen.jsx:fetchAlerts",
+      "type": "function",
+      "name": "fetchAlerts",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/alerts/AlertsScreen.jsx",
+        "lineno": 15
+      }
+    },
+    {
+      "id": "func:frontend/src/farmer/alerts/AlertsScreen.jsx:handleMarkAsRead",
+      "type": "function",
+      "name": "handleMarkAsRead",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/alerts/AlertsScreen.jsx",
+        "lineno": 26
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/dashboard/FarmerDashboard.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/dashboard/FarmerDashboard.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/dashboard/FarmerDashboard.jsx:FarmerDashboard",
+      "type": "function",
+      "name": "FarmerDashboard",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/dashboard/FarmerDashboard.jsx",
+        "lineno": 22
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/insurance/InsuranceScreen.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/insurance/InsuranceScreen.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/insurance/InsuranceScreen.jsx:InsuranceScreen",
+      "type": "function",
+      "name": "InsuranceScreen",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/insurance/InsuranceScreen.jsx",
+        "lineno": 4
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/layout/BottomNav.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/layout/BottomNav.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/layout/BottomNav.jsx:BottomNav",
+      "type": "function",
+      "name": "BottomNav",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/layout/BottomNav.jsx",
+        "lineno": 5
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/layout/FarmerLayout.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/layout/FarmerLayout.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/layout/FarmerLayout.jsx:FarmerLayout",
+      "type": "function",
+      "name": "FarmerLayout",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/layout/FarmerLayout.jsx",
+        "lineno": 10
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/onboarding/OnboardingFlow.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/onboarding/OnboardingFlow.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/onboarding/OnboardingFlow.jsx:OnboardingFlow",
+      "type": "function",
+      "name": "OnboardingFlow",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/onboarding/OnboardingFlow.jsx",
+        "lineno": 8
+      }
+    },
+    {
+      "id": "func:frontend/src/farmer/onboarding/OnboardingFlow.jsx:toggleCrop",
+      "type": "function",
+      "name": "toggleCrop",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/onboarding/OnboardingFlow.jsx",
+        "lineno": 22
+      }
+    },
+    {
+      "id": "func:frontend/src/farmer/onboarding/OnboardingFlow.jsx:handleFinish",
+      "type": "function",
+      "name": "handleFinish",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/onboarding/OnboardingFlow.jsx",
+        "lineno": 28
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/profile/ProfileScreen.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/profile/ProfileScreen.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/profile/ProfileScreen.jsx:ProfileScreen",
+      "type": "function",
+      "name": "ProfileScreen",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/profile/ProfileScreen.jsx",
+        "lineno": 9
+      }
+    },
+    {
+      "id": "func:frontend/src/farmer/profile/ProfileScreen.jsx:handleDelete",
+      "type": "function",
+      "name": "handleDelete",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/profile/ProfileScreen.jsx",
+        "lineno": 20
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/schemes/ExploreSchemesScreen.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/schemes/ExploreSchemesScreen.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/schemes/ExploreSchemesScreen.jsx:ExploreSchemesScreen",
+      "type": "function",
+      "name": "ExploreSchemesScreen",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/schemes/ExploreSchemesScreen.jsx",
+        "lineno": 9
+      }
+    },
+    {
+      "id": "func:frontend/src/farmer/schemes/ExploreSchemesScreen.jsx:fetchSchemes",
+      "type": "function",
+      "name": "fetchSchemes",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/schemes/ExploreSchemesScreen.jsx",
+        "lineno": 18
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/schemes/SchemeCard.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/schemes/SchemeCard.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/schemes/SchemeCard.jsx:SchemeCard",
+      "type": "function",
+      "name": "SchemeCard",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/schemes/SchemeCard.jsx",
+        "lineno": 7
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/schemes/SchemeDetailScreen.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/schemes/SchemeDetailScreen.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/schemes/SchemeDetailScreen.jsx:SchemeDetailScreen",
+      "type": "function",
+      "name": "SchemeDetailScreen",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/schemes/SchemeDetailScreen.jsx",
+        "lineno": 22
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/updates/ChangeComparisonScreen.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/updates/ChangeComparisonScreen.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/updates/ChangeComparisonScreen.jsx:ChangeComparisonScreen",
+      "type": "function",
+      "name": "ChangeComparisonScreen",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/updates/ChangeComparisonScreen.jsx",
+        "lineno": 22
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/updates/UpdateItem.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/updates/UpdateItem.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/updates/UpdateItem.jsx:UpdateItem",
+      "type": "function",
+      "name": "UpdateItem",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/updates/UpdateItem.jsx",
+        "lineno": 5
+      }
+    },
+    {
+      "id": "file:frontend/src/farmer/updates/UpdatesScreen.jsx",
+      "type": "file",
+      "name": "frontend/src/farmer/updates/UpdatesScreen.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/farmer/updates/UpdatesScreen.jsx:UpdatesScreen",
+      "type": "function",
+      "name": "UpdatesScreen",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/updates/UpdatesScreen.jsx",
+        "lineno": 8
+      }
+    },
+    {
+      "id": "func:frontend/src/farmer/updates/UpdatesScreen.jsx:fetchUpdates",
+      "type": "function",
+      "name": "fetchUpdates",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/farmer/updates/UpdatesScreen.jsx",
+        "lineno": 16
+      }
+    },
+    {
+      "id": "file:frontend/src/hooks/useNetworkStatus.js",
+      "type": "file",
+      "name": "frontend/src/hooks/useNetworkStatus.js",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/hooks/useNetworkStatus.js:useNetworkStatus",
+      "type": "function",
+      "name": "useNetworkStatus",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/hooks/useNetworkStatus.js",
+        "lineno": 3
+      }
+    },
+    {
+      "id": "func:frontend/src/hooks/useNetworkStatus.js:handleOnline",
+      "type": "function",
+      "name": "handleOnline",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/hooks/useNetworkStatus.js",
+        "lineno": 7
+      }
+    },
+    {
+      "id": "func:frontend/src/hooks/useNetworkStatus.js:handleOffline",
+      "type": "function",
+      "name": "handleOffline",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/hooks/useNetworkStatus.js",
+        "lineno": 8
+      }
+    },
+    {
+      "id": "file:frontend/src/i18n/useTranslation.jsx",
+      "type": "file",
+      "name": "frontend/src/i18n/useTranslation.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/i18n/useTranslation.jsx:LanguageProvider",
+      "type": "function",
+      "name": "LanguageProvider",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/i18n/useTranslation.jsx",
+        "lineno": 7
+      }
+    },
+    {
+      "id": "func:frontend/src/i18n/useTranslation.jsx:setLang",
+      "type": "function",
+      "name": "setLang",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/i18n/useTranslation.jsx",
+        "lineno": 13
+      }
+    },
+    {
+      "id": "func:frontend/src/i18n/useTranslation.jsx:t",
+      "type": "function",
+      "name": "t",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/i18n/useTranslation.jsx",
+        "lineno": 18
+      }
+    },
+    {
+      "id": "func:frontend/src/i18n/useTranslation.jsx:useTranslation",
+      "type": "function",
+      "name": "useTranslation",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/i18n/useTranslation.jsx",
+        "lineno": 30
+      }
+    },
+    {
+      "id": "file:frontend/src/main.jsx",
+      "type": "file",
+      "name": "frontend/src/main.jsx",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/main.jsx:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/main.jsx",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:frontend/src/utils/constants.js",
+      "type": "file",
+      "name": "frontend/src/utils/constants.js",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/src/utils/constants.js:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/src/utils/constants.js",
+        "lineno": 1
+      }
+    },
+    {
+      "id": "file:frontend/vite.config.js",
+      "type": "file",
+      "name": "frontend/vite.config.js",
+      "source_system": "javascript"
+    },
+    {
+      "id": "func:frontend/vite.config.js:<module>",
+      "type": "function",
+      "name": "<module>",
+      "source_system": "javascript",
+      "metadata": {
+        "file": "frontend/vite.config.js",
+        "lineno": 1
+      }
+    }
+  ],
+  "edges": [
+    {
+      "source": "func:backend/app/config.py:<module>",
+      "target": "file:backend/app/config.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/config.py:1"
+    },
+    {
+      "source": "func:backend/app/core/dependencies.py:get_current_farmer_profile",
+      "target": "file:backend/app/core/dependencies.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/dependencies.py:16"
+    },
+    {
+      "source": "func:backend/app/core/dependencies.py:get_current_farmer_profile",
+      "target": "table:profiles",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Profile)",
+      "metadata": {
+        "file": "backend/app/core/dependencies.py",
+        "lineno": 16,
+        "model": "Profile"
+      }
+    },
+    {
+      "source": "func:backend/app/core/dependencies.py:get_current_farmer_profile",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/core/dependencies.py",
+        "lineno": 16,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/core/dependencies.py:get_current_admin_user",
+      "target": "file:backend/app/core/dependencies.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/dependencies.py:55"
+    },
+    {
+      "source": "func:backend/app/core/dependencies.py:get_current_admin_user",
+      "target": "table:users",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(User)",
+      "metadata": {
+        "file": "backend/app/core/dependencies.py",
+        "lineno": 55,
+        "model": "User"
+      }
+    },
+    {
+      "source": "func:backend/app/core/dependencies.py:get_current_admin_user",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/core/dependencies.py",
+        "lineno": 55,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/core/dependencies.py:require_role",
+      "target": "file:backend/app/core/dependencies.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/dependencies.py:91"
+    },
+    {
+      "source": "func:backend/app/core/dependencies.py:role_checker",
+      "target": "file:backend/app/core/dependencies.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/dependencies.py:96"
+    },
+    {
+      "source": "func:backend/app/core/dependencies.py:log_audit_event",
+      "target": "file:backend/app/core/dependencies.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/dependencies.py:107"
+    },
+    {
+      "source": "func:backend/app/core/security.py:generate_profile_token",
+      "target": "file:backend/app/core/security.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/security.py:10"
+    },
+    {
+      "source": "func:backend/app/core/security.py:hash_token",
+      "target": "file:backend/app/core/security.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/security.py:15"
+    },
+    {
+      "source": "func:backend/app/core/security.py:verify_password",
+      "target": "file:backend/app/core/security.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/security.py:20"
+    },
+    {
+      "source": "func:backend/app/core/security.py:get_password_hash",
+      "target": "file:backend/app/core/security.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/security.py:29"
+    },
+    {
+      "source": "func:backend/app/core/security.py:create_access_token",
+      "target": "file:backend/app/core/security.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/security.py:36"
+    },
+    {
+      "source": "func:backend/app/core/security.py:decode_access_token",
+      "target": "file:backend/app/core/security.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/core/security.py:47"
+    },
+    {
+      "source": "func:backend/app/database.py:get_db",
+      "target": "file:backend/app/database.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/database.py:23"
+    },
+    {
+      "source": "func:backend/app/database.py:init_db",
+      "target": "file:backend/app/database.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/database.py:36"
+    },
+    {
+      "source": "func:backend/app/main.py:dispatch",
+      "target": "file:backend/app/main.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/main.py:21"
+    },
+    {
+      "source": "func:backend/app/main.py:seed_initial_data",
+      "target": "file:backend/app/main.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/main.py:29"
+    },
+    {
+      "source": "func:backend/app/main.py:seed_initial_data",
+      "target": "table:users",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(User)",
+      "metadata": {
+        "file": "backend/app/main.py",
+        "lineno": 29,
+        "model": "User"
+      }
+    },
+    {
+      "source": "func:backend/app/main.py:seed_initial_data",
+      "target": "table:sources",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Source)",
+      "metadata": {
+        "file": "backend/app/main.py",
+        "lineno": 29,
+        "model": "Source"
+      }
+    },
+    {
+      "source": "func:backend/app/main.py:seed_initial_data",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(admin_stmt)",
+      "metadata": {
+        "file": "backend/app/main.py",
+        "lineno": 29,
+        "variable": "admin_stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/main.py:seed_initial_data",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(sources_stmt)",
+      "metadata": {
+        "file": "backend/app/main.py",
+        "lineno": 29,
+        "variable": "sources_stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/main.py:lifespan",
+      "target": "file:backend/app/main.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/main.py:83"
+    },
+    {
+      "source": "func:backend/app/models/alert.py:<module>",
+      "target": "file:backend/app/models/alert.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/models/alert.py:1"
+    },
+    {
+      "source": "func:backend/app/models/audit.py:<module>",
+      "target": "file:backend/app/models/audit.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/models/audit.py:1"
+    },
+    {
+      "source": "func:backend/app/models/extraction.py:<module>",
+      "target": "file:backend/app/models/extraction.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/models/extraction.py:1"
+    },
+    {
+      "source": "func:backend/app/models/notice.py:<module>",
+      "target": "file:backend/app/models/notice.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/models/notice.py:1"
+    },
+    {
+      "source": "func:backend/app/models/profile.py:<module>",
+      "target": "file:backend/app/models/profile.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/models/profile.py:1"
+    },
+    {
+      "source": "func:backend/app/models/scheme.py:<module>",
+      "target": "file:backend/app/models/scheme.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/models/scheme.py:1"
+    },
+    {
+      "source": "func:backend/app/models/snapshot.py:<module>",
+      "target": "file:backend/app/models/snapshot.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/models/snapshot.py:1"
+    },
+    {
+      "source": "func:backend/app/models/source.py:<module>",
+      "target": "file:backend/app/models/source.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/models/source.py:1"
+    },
+    {
+      "source": "func:backend/app/models/user.py:<module>",
+      "target": "file:backend/app/models/user.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/models/user.py:1"
+    },
+    {
+      "source": "func:backend/app/models/__init__.py:<module>",
+      "target": "file:backend/app/models/__init__.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/models/__init__.py:1"
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:admin_login",
+      "target": "file:backend/app/routers/admin.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/admin.py:30"
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:admin_login",
+      "target": "table:users",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(User)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 30,
+        "model": "User"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:admin_login",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 30,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:list_sources",
+      "target": "file:backend/app/routers/admin.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/admin.py:66"
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:list_sources",
+      "target": "table:sources",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Source)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 66,
+        "model": "Source"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:list_sources",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 66,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:create_source",
+      "target": "file:backend/app/routers/admin.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/admin.py:77"
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:trigger_source_poll",
+      "target": "file:backend/app/routers/admin.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/admin.py:107"
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:trigger_source_poll",
+      "target": "table:sources",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Source)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 107,
+        "model": "Source"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:trigger_source_poll",
+      "target": "table:snapshots",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Snapshot)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 107,
+        "model": "Snapshot"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:trigger_source_poll",
+      "target": "table:notices",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Notice)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 107,
+        "model": "Notice"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:trigger_source_poll",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 107,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:trigger_source_poll",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(snap_stmt)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 107,
+        "variable": "snap_stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:trigger_source_poll",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(notice_stmt)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 107,
+        "variable": "notice_stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:trigger_source_poll",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(ver_count_stmt)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 107,
+        "variable": "ver_count_stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:get_review_queue",
+      "target": "file:backend/app/routers/admin.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/admin.py:250"
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:get_review_queue",
+      "target": "table:noticeversions",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(NoticeVersion)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 250,
+        "model": "NoticeVersion"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:get_review_queue",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 250,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:submit_review_decision",
+      "target": "file:backend/app/routers/admin.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/admin.py:297"
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:submit_review_decision",
+      "target": "table:noticeversions",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(NoticeVersion)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 297,
+        "model": "NoticeVersion"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:submit_review_decision",
+      "target": "table:profiles",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Profile)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 297,
+        "model": "Profile"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:submit_review_decision",
+      "target": "table:alerts",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Alert)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 297,
+        "model": "Alert"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:submit_review_decision",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 297,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:submit_review_decision",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(existing_alert_stmt)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 297,
+        "variable": "existing_alert_stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:list_audit_logs",
+      "target": "file:backend/app/routers/admin.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/admin.py:384"
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:list_audit_logs",
+      "target": "table:auditlogs",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(AuditLog)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 384,
+        "model": "AuditLog"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:list_audit_logs",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/admin.py",
+        "lineno": 384,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/admin.py:get_system_metrics",
+      "target": "file:backend/app/routers/admin.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/admin.py:396"
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:create_profile",
+      "target": "file:backend/app/routers/farmer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/farmer.py:23"
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:get_my_profile",
+      "target": "file:backend/app/routers/farmer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/farmer.py:64"
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:update_my_profile",
+      "target": "file:backend/app/routers/farmer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/farmer.py:70"
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:delete_my_profile",
+      "target": "file:backend/app/routers/farmer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/farmer.py:92"
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:get_matched_schemes",
+      "target": "file:backend/app/routers/farmer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/farmer.py:108"
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:get_matched_schemes",
+      "target": "table:noticeversions",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(NoticeVersion)",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 108,
+        "model": "NoticeVersion"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:get_matched_schemes",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 108,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:get_farmer_alerts",
+      "target": "file:backend/app/routers/farmer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/farmer.py:174"
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:get_farmer_alerts",
+      "target": "table:alerts",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Alert)",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 174,
+        "model": "Alert"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:get_farmer_alerts",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 174,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:mark_alert_as_read",
+      "target": "file:backend/app/routers/farmer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/farmer.py:224"
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:mark_alert_as_read",
+      "target": "table:alerts",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Alert)",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 224,
+        "model": "Alert"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/farmer.py:mark_alert_as_read",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/farmer.py",
+        "lineno": 224,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/health.py:health_check",
+      "target": "file:backend/app/routers/health.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/health.py:12"
+    },
+    {
+      "source": "func:backend/app/routers/public.py:list_public_sources",
+      "target": "file:backend/app/routers/public.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/public.py:16"
+    },
+    {
+      "source": "func:backend/app/routers/public.py:list_public_sources",
+      "target": "table:sources",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(Source)",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 16,
+        "model": "Source"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/public.py:list_public_sources",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 16,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/public.py:list_public_schemes",
+      "target": "file:backend/app/routers/public.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/public.py:24"
+    },
+    {
+      "source": "func:backend/app/routers/public.py:list_public_schemes",
+      "target": "table:noticeversions",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(NoticeVersion)",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 24,
+        "model": "NoticeVersion"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/public.py:list_public_schemes",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 24,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/public.py:get_public_scheme_by_id",
+      "target": "file:backend/app/routers/public.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/public.py:92"
+    },
+    {
+      "source": "func:backend/app/routers/public.py:get_public_scheme_by_id",
+      "target": "table:noticeversions",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(NoticeVersion)",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 92,
+        "model": "NoticeVersion"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/public.py:get_public_scheme_by_id",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 92,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/public.py:get_crop_insurance_info",
+      "target": "file:backend/app/routers/public.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/public.py:141"
+    },
+    {
+      "source": "func:backend/app/routers/public.py:get_latest_notices",
+      "target": "file:backend/app/routers/public.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/public.py:171"
+    },
+    {
+      "source": "func:backend/app/routers/public.py:get_latest_notices",
+      "target": "table:noticeversions",
+      "type": "orm_call",
+      "confidence": 0.98,
+      "evidence": "select(NoticeVersion)",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 171,
+        "model": "NoticeVersion"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/public.py:get_latest_notices",
+      "target": "table:unresolved",
+      "type": "dynamic_unresolved",
+      "confidence": 0.15,
+      "evidence": "execute(stmt)",
+      "metadata": {
+        "file": "backend/app/routers/public.py",
+        "lineno": 171,
+        "variable": "stmt"
+      }
+    },
+    {
+      "source": "func:backend/app/routers/__init__.py:<module>",
+      "target": "file:backend/app/routers/__init__.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/routers/__init__.py:1"
+    },
+    {
+      "source": "func:backend/app/schemas/alert.py:<module>",
+      "target": "file:backend/app/schemas/alert.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/schemas/alert.py:1"
+    },
+    {
+      "source": "func:backend/app/schemas/extraction.py:<module>",
+      "target": "file:backend/app/schemas/extraction.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/schemas/extraction.py:1"
+    },
+    {
+      "source": "func:backend/app/schemas/notice.py:<module>",
+      "target": "file:backend/app/schemas/notice.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/schemas/notice.py:1"
+    },
+    {
+      "source": "func:backend/app/schemas/profile.py:<module>",
+      "target": "file:backend/app/schemas/profile.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/schemas/profile.py:1"
+    },
+    {
+      "source": "func:backend/app/schemas/source.py:<module>",
+      "target": "file:backend/app/schemas/source.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/schemas/source.py:1"
+    },
+    {
+      "source": "func:backend/app/schemas/user.py:<module>",
+      "target": "file:backend/app/schemas/user.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/schemas/user.py:1"
+    },
+    {
+      "source": "func:backend/app/schemas/__init__.py:<module>",
+      "target": "file:backend/app/schemas/__init__.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/schemas/__init__.py:1"
+    },
+    {
+      "source": "func:backend/app/services/detector.py:compute_content_hash",
+      "target": "file:backend/app/services/detector.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/services/detector.py:6"
+    },
+    {
+      "source": "func:backend/app/services/detector.py:compute_text_diff",
+      "target": "file:backend/app/services/detector.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/services/detector.py:11"
+    },
+    {
+      "source": "func:backend/app/services/detector.py:is_significant_change",
+      "target": "file:backend/app/services/detector.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/services/detector.py:37"
+    },
+    {
+      "source": "func:backend/app/services/fetcher.py:fetch_source_content",
+      "target": "file:backend/app/services/fetcher.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/services/fetcher.py:11"
+    },
+    {
+      "source": "func:backend/app/services/matcher.py:is_potentially_relevant",
+      "target": "file:backend/app/services/matcher.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/services/matcher.py:4"
+    },
+    {
+      "source": "func:backend/app/services/normalizer.py:convert_devanagari_digits",
+      "target": "file:backend/app/services/normalizer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/services/normalizer.py:9"
+    },
+    {
+      "source": "func:backend/app/services/normalizer.py:normalize_html",
+      "target": "file:backend/app/services/normalizer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/services/normalizer.py:16"
+    },
+    {
+      "source": "func:backend/app/services/normalizer.py:normalize_source_text",
+      "target": "file:backend/app/services/normalizer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/services/normalizer.py:46"
+    },
+    {
+      "source": "func:backend/app/services/validator.py:validate_extraction_rules",
+      "target": "file:backend/app/services/validator.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/services/validator.py:15"
+    },
+    {
+      "source": "func:backend/app/__init__.py:<module>",
+      "target": "file:backend/app/__init__.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/app/__init__.py:1"
+    },
+    {
+      "source": "func:backend/start.py:<module>",
+      "target": "file:backend/start.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/start.py:1"
+    },
+    {
+      "source": "func:backend/tests/conftest.py:db_session",
+      "target": "file:backend/tests/conftest.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/conftest.py:19"
+    },
+    {
+      "source": "func:backend/tests/conftest.py:client",
+      "target": "file:backend/tests/conftest.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/conftest.py:31"
+    },
+    {
+      "source": "func:backend/tests/conftest.py:override_get_db",
+      "target": "file:backend/tests/conftest.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/conftest.py:32"
+    },
+    {
+      "source": "func:backend/tests/test_api_endpoints.py:test_health_check",
+      "target": "file:backend/tests/test_api_endpoints.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_api_endpoints.py:8"
+    },
+    {
+      "source": "func:backend/tests/test_api_endpoints.py:test_anonymous_farmer_profile_lifecycle",
+      "target": "file:backend/tests/test_api_endpoints.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_api_endpoints.py:17"
+    },
+    {
+      "source": "func:backend/tests/test_api_endpoints.py:test_admin_auth_and_rbac",
+      "target": "file:backend/tests/test_api_endpoints.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_api_endpoints.py:61"
+    },
+    {
+      "source": "func:backend/tests/test_auth_and_security.py:test_farmer_anonymous_token",
+      "target": "file:backend/tests/test_auth_and_security.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_auth_and_security.py:13"
+    },
+    {
+      "source": "func:backend/tests/test_auth_and_security.py:test_admin_password_hashing",
+      "target": "file:backend/tests/test_auth_and_security.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_auth_and_security.py:28"
+    },
+    {
+      "source": "func:backend/tests/test_auth_and_security.py:test_admin_jwt_lifecycle",
+      "target": "file:backend/tests/test_auth_and_security.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_auth_and_security.py:37"
+    },
+    {
+      "source": "func:backend/tests/test_auth_and_security.py:test_expired_jwt_rejected",
+      "target": "file:backend/tests/test_auth_and_security.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_auth_and_security.py:48"
+    },
+    {
+      "source": "func:backend/tests/test_detector.py:test_hash_consistency",
+      "target": "file:backend/tests/test_detector.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_detector.py:4"
+    },
+    {
+      "source": "func:backend/tests/test_detector.py:test_seeded_change_detection",
+      "target": "file:backend/tests/test_detector.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_detector.py:10"
+    },
+    {
+      "source": "func:backend/tests/test_detector.py:test_no_change_when_identical",
+      "target": "file:backend/tests/test_detector.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_detector.py:30"
+    },
+    {
+      "source": "func:backend/tests/test_matcher.py:test_statewide_and_all_crops_matches_any_farmer",
+      "target": "file:backend/tests/test_matcher.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_matcher.py:4"
+    },
+    {
+      "source": "func:backend/tests/test_matcher.py:test_district_match",
+      "target": "file:backend/tests/test_matcher.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_matcher.py:13"
+    },
+    {
+      "source": "func:backend/tests/test_matcher.py:test_crop_intersection_match",
+      "target": "file:backend/tests/test_matcher.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_matcher.py:24"
+    },
+    {
+      "source": "func:backend/tests/test_normalizer.py:test_convert_devanagari_digits",
+      "target": "file:backend/tests/test_normalizer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_normalizer.py:4"
+    },
+    {
+      "source": "func:backend/tests/test_normalizer.py:test_normalize_html_removes_scripts_nav",
+      "target": "file:backend/tests/test_normalizer.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_normalizer.py:13"
+    },
+    {
+      "source": "func:backend/tests/test_validator.py:test_valid_extraction_passes_to_auto_checked",
+      "target": "file:backend/tests/test_validator.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_validator.py:4"
+    },
+    {
+      "source": "func:backend/tests/test_validator.py:test_fabricated_quote_fails_and_flags_needs_review",
+      "target": "file:backend/tests/test_validator.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_validator.py:35"
+    },
+    {
+      "source": "func:backend/tests/test_validator.py:test_conflicting_deadlines_flags_needs_review",
+      "target": "file:backend/tests/test_validator.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/test_validator.py:59"
+    },
+    {
+      "source": "func:backend/tests/__init__.py:<module>",
+      "target": "file:backend/tests/__init__.py",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in backend/tests/__init__.py:1"
+    },
+    {
+      "source": "func:frontend/public/sw.js:<module>",
+      "target": "file:frontend/public/sw.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/public/sw.js:1"
+    },
+    {
+      "source": "func:frontend/src/admin/audit/AuditLog.jsx:AuditLog",
+      "target": "file:frontend/src/admin/audit/AuditLog.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/audit/AuditLog.jsx:6"
+    },
+    {
+      "source": "func:frontend/src/admin/audit/AuditLog.jsx:fetchLogs",
+      "target": "file:frontend/src/admin/audit/AuditLog.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/audit/AuditLog.jsx:11"
+    },
+    {
+      "source": "func:frontend/src/admin/layout/AdminLayout.jsx:AdminLayout",
+      "target": "file:frontend/src/admin/layout/AdminLayout.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/layout/AdminLayout.jsx:5"
+    },
+    {
+      "source": "func:frontend/src/admin/layout/AdminLayout.jsx:handleLogout",
+      "target": "file:frontend/src/admin/layout/AdminLayout.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/layout/AdminLayout.jsx:9"
+    },
+    {
+      "source": "func:frontend/src/admin/login/LoginPage.jsx:LoginPage",
+      "target": "file:frontend/src/admin/login/LoginPage.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/login/LoginPage.jsx:6"
+    },
+    {
+      "source": "func:frontend/src/admin/login/LoginPage.jsx:handleInitialLogin",
+      "target": "file:frontend/src/admin/login/LoginPage.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/login/LoginPage.jsx:16"
+    },
+    {
+      "source": "func:frontend/src/admin/login/LoginPage.jsx:handleMfaSubmit",
+      "target": "file:frontend/src/admin/login/LoginPage.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/login/LoginPage.jsx:32"
+    },
+    {
+      "source": "func:frontend/src/admin/metrics/MetricsPanel.jsx:MetricsPanel",
+      "target": "file:frontend/src/admin/metrics/MetricsPanel.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/metrics/MetricsPanel.jsx:6"
+    },
+    {
+      "source": "func:frontend/src/admin/review/ReviewQueue.jsx:ReviewQueue",
+      "target": "file:frontend/src/admin/review/ReviewQueue.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/review/ReviewQueue.jsx:6"
+    },
+    {
+      "source": "func:frontend/src/admin/review/ReviewQueue.jsx:fetchQueue",
+      "target": "file:frontend/src/admin/review/ReviewQueue.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/review/ReviewQueue.jsx:12"
+    },
+    {
+      "source": "func:frontend/src/admin/review/ReviewQueue.jsx:handleApprove",
+      "target": "file:frontend/src/admin/review/ReviewQueue.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/review/ReviewQueue.jsx:23"
+    },
+    {
+      "source": "func:frontend/src/admin/review/ReviewQueue.jsx:handleReject",
+      "target": "file:frontend/src/admin/review/ReviewQueue.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/review/ReviewQueue.jsx:30"
+    },
+    {
+      "source": "func:frontend/src/admin/sources/SourcesTable.jsx:SourcesTable",
+      "target": "file:frontend/src/admin/sources/SourcesTable.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/sources/SourcesTable.jsx:6"
+    },
+    {
+      "source": "func:frontend/src/admin/sources/SourcesTable.jsx:fetchSources",
+      "target": "file:frontend/src/admin/sources/SourcesTable.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/admin/sources/SourcesTable.jsx:11"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:normalizeScheme",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:14"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:normalizeNotice",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:36"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:getSchemes",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:54"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:getSchemeById",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:89"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:getNoticeUpdates",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:105"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:getNoticeUpdateById",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:130"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:getAlerts",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:144"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:markAlertRead",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:159"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:getInsuranceInfo",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:175"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:getSources",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:191"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:triggerSourcePoll",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:204"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:getReviewQueue",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:213"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:approveExtraction",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:245"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:rejectExtraction",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:265"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:getAuditLog",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:285"
+    },
+    {
+      "source": "func:frontend/src/api/client.js:getMetrics",
+      "target": "file:frontend/src/api/client.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/client.js:302"
+    },
+    {
+      "source": "func:frontend/src/api/mockData.js:<module>",
+      "target": "file:frontend/src/api/mockData.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/api/mockData.js:1"
+    },
+    {
+      "source": "func:frontend/src/App.jsx:AdminLoadingFallback",
+      "target": "file:frontend/src/App.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/App.jsx:24"
+    },
+    {
+      "source": "func:frontend/src/App.jsx:App",
+      "target": "file:frontend/src/App.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/App.jsx:30"
+    },
+    {
+      "source": "func:frontend/src/auth/AdminAuthContext.jsx:AdminAuthProvider",
+      "target": "file:frontend/src/auth/AdminAuthContext.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/auth/AdminAuthContext.jsx:7"
+    },
+    {
+      "source": "func:frontend/src/auth/AdminAuthContext.jsx:login",
+      "target": "file:frontend/src/auth/AdminAuthContext.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/auth/AdminAuthContext.jsx:40"
+    },
+    {
+      "source": "func:frontend/src/auth/AdminAuthContext.jsx:verifyMFA",
+      "target": "file:frontend/src/auth/AdminAuthContext.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/auth/AdminAuthContext.jsx:84"
+    },
+    {
+      "source": "func:frontend/src/auth/AdminAuthContext.jsx:logout",
+      "target": "file:frontend/src/auth/AdminAuthContext.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/auth/AdminAuthContext.jsx:102"
+    },
+    {
+      "source": "func:frontend/src/auth/AdminAuthContext.jsx:useAdminAuth",
+      "target": "file:frontend/src/auth/AdminAuthContext.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/auth/AdminAuthContext.jsx:129"
+    },
+    {
+      "source": "func:frontend/src/auth/FarmerTokenContext.jsx:FarmerTokenProvider",
+      "target": "file:frontend/src/auth/FarmerTokenContext.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/auth/FarmerTokenContext.jsx:7"
+    },
+    {
+      "source": "func:frontend/src/auth/FarmerTokenContext.jsx:saveProfile",
+      "target": "file:frontend/src/auth/FarmerTokenContext.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/auth/FarmerTokenContext.jsx:21"
+    },
+    {
+      "source": "func:frontend/src/auth/FarmerTokenContext.jsx:deleteProfile",
+      "target": "file:frontend/src/auth/FarmerTokenContext.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/auth/FarmerTokenContext.jsx:93"
+    },
+    {
+      "source": "func:frontend/src/auth/FarmerTokenContext.jsx:useFarmerToken",
+      "target": "file:frontend/src/auth/FarmerTokenContext.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/auth/FarmerTokenContext.jsx:126"
+    },
+    {
+      "source": "func:frontend/src/auth/ProtectedRoute.jsx:ProtectedRoute",
+      "target": "file:frontend/src/auth/ProtectedRoute.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/auth/ProtectedRoute.jsx:4"
+    },
+    {
+      "source": "func:frontend/src/components/LanguageToggle.jsx:LanguageToggle",
+      "target": "file:frontend/src/components/LanguageToggle.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/components/LanguageToggle.jsx:4"
+    },
+    {
+      "source": "func:frontend/src/components/OfflineBanner.jsx:OfflineBanner",
+      "target": "file:frontend/src/components/OfflineBanner.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/components/OfflineBanner.jsx:5"
+    },
+    {
+      "source": "func:frontend/src/components/SourceLink.jsx:SourceLink",
+      "target": "file:frontend/src/components/SourceLink.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/components/SourceLink.jsx:4"
+    },
+    {
+      "source": "func:frontend/src/components/VerificationBadge.jsx:VerificationBadge",
+      "target": "file:frontend/src/components/VerificationBadge.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/components/VerificationBadge.jsx:4"
+    },
+    {
+      "source": "func:frontend/src/farmer/alerts/AlertsScreen.jsx:AlertsScreen",
+      "target": "file:frontend/src/farmer/alerts/AlertsScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/alerts/AlertsScreen.jsx:8"
+    },
+    {
+      "source": "func:frontend/src/farmer/alerts/AlertsScreen.jsx:fetchAlerts",
+      "target": "file:frontend/src/farmer/alerts/AlertsScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/alerts/AlertsScreen.jsx:15"
+    },
+    {
+      "source": "func:frontend/src/farmer/alerts/AlertsScreen.jsx:handleMarkAsRead",
+      "target": "file:frontend/src/farmer/alerts/AlertsScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/alerts/AlertsScreen.jsx:26"
+    },
+    {
+      "source": "func:frontend/src/farmer/dashboard/FarmerDashboard.jsx:FarmerDashboard",
+      "target": "file:frontend/src/farmer/dashboard/FarmerDashboard.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/dashboard/FarmerDashboard.jsx:22"
+    },
+    {
+      "source": "func:frontend/src/farmer/insurance/InsuranceScreen.jsx:InsuranceScreen",
+      "target": "file:frontend/src/farmer/insurance/InsuranceScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/insurance/InsuranceScreen.jsx:4"
+    },
+    {
+      "source": "func:frontend/src/farmer/layout/BottomNav.jsx:BottomNav",
+      "target": "file:frontend/src/farmer/layout/BottomNav.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/layout/BottomNav.jsx:5"
+    },
+    {
+      "source": "func:frontend/src/farmer/layout/FarmerLayout.jsx:FarmerLayout",
+      "target": "file:frontend/src/farmer/layout/FarmerLayout.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/layout/FarmerLayout.jsx:10"
+    },
+    {
+      "source": "func:frontend/src/farmer/onboarding/OnboardingFlow.jsx:OnboardingFlow",
+      "target": "file:frontend/src/farmer/onboarding/OnboardingFlow.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/onboarding/OnboardingFlow.jsx:8"
+    },
+    {
+      "source": "func:frontend/src/farmer/onboarding/OnboardingFlow.jsx:toggleCrop",
+      "target": "file:frontend/src/farmer/onboarding/OnboardingFlow.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/onboarding/OnboardingFlow.jsx:22"
+    },
+    {
+      "source": "func:frontend/src/farmer/onboarding/OnboardingFlow.jsx:handleFinish",
+      "target": "file:frontend/src/farmer/onboarding/OnboardingFlow.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/onboarding/OnboardingFlow.jsx:28"
+    },
+    {
+      "source": "func:frontend/src/farmer/profile/ProfileScreen.jsx:ProfileScreen",
+      "target": "file:frontend/src/farmer/profile/ProfileScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/profile/ProfileScreen.jsx:9"
+    },
+    {
+      "source": "func:frontend/src/farmer/profile/ProfileScreen.jsx:handleDelete",
+      "target": "file:frontend/src/farmer/profile/ProfileScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/profile/ProfileScreen.jsx:20"
+    },
+    {
+      "source": "func:frontend/src/farmer/schemes/ExploreSchemesScreen.jsx:ExploreSchemesScreen",
+      "target": "file:frontend/src/farmer/schemes/ExploreSchemesScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/schemes/ExploreSchemesScreen.jsx:9"
+    },
+    {
+      "source": "func:frontend/src/farmer/schemes/ExploreSchemesScreen.jsx:fetchSchemes",
+      "target": "file:frontend/src/farmer/schemes/ExploreSchemesScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/schemes/ExploreSchemesScreen.jsx:18"
+    },
+    {
+      "source": "func:frontend/src/farmer/schemes/SchemeCard.jsx:SchemeCard",
+      "target": "file:frontend/src/farmer/schemes/SchemeCard.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/schemes/SchemeCard.jsx:7"
+    },
+    {
+      "source": "func:frontend/src/farmer/schemes/SchemeDetailScreen.jsx:SchemeDetailScreen",
+      "target": "file:frontend/src/farmer/schemes/SchemeDetailScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/schemes/SchemeDetailScreen.jsx:22"
+    },
+    {
+      "source": "func:frontend/src/farmer/updates/ChangeComparisonScreen.jsx:ChangeComparisonScreen",
+      "target": "file:frontend/src/farmer/updates/ChangeComparisonScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/updates/ChangeComparisonScreen.jsx:22"
+    },
+    {
+      "source": "func:frontend/src/farmer/updates/UpdateItem.jsx:UpdateItem",
+      "target": "file:frontend/src/farmer/updates/UpdateItem.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/updates/UpdateItem.jsx:5"
+    },
+    {
+      "source": "func:frontend/src/farmer/updates/UpdatesScreen.jsx:UpdatesScreen",
+      "target": "file:frontend/src/farmer/updates/UpdatesScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/updates/UpdatesScreen.jsx:8"
+    },
+    {
+      "source": "func:frontend/src/farmer/updates/UpdatesScreen.jsx:fetchUpdates",
+      "target": "file:frontend/src/farmer/updates/UpdatesScreen.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/farmer/updates/UpdatesScreen.jsx:16"
+    },
+    {
+      "source": "func:frontend/src/hooks/useNetworkStatus.js:useNetworkStatus",
+      "target": "file:frontend/src/hooks/useNetworkStatus.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/hooks/useNetworkStatus.js:3"
+    },
+    {
+      "source": "func:frontend/src/hooks/useNetworkStatus.js:handleOnline",
+      "target": "file:frontend/src/hooks/useNetworkStatus.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/hooks/useNetworkStatus.js:7"
+    },
+    {
+      "source": "func:frontend/src/hooks/useNetworkStatus.js:handleOffline",
+      "target": "file:frontend/src/hooks/useNetworkStatus.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/hooks/useNetworkStatus.js:8"
+    },
+    {
+      "source": "func:frontend/src/i18n/useTranslation.jsx:LanguageProvider",
+      "target": "file:frontend/src/i18n/useTranslation.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/i18n/useTranslation.jsx:7"
+    },
+    {
+      "source": "func:frontend/src/i18n/useTranslation.jsx:setLang",
+      "target": "file:frontend/src/i18n/useTranslation.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/i18n/useTranslation.jsx:13"
+    },
+    {
+      "source": "func:frontend/src/i18n/useTranslation.jsx:t",
+      "target": "file:frontend/src/i18n/useTranslation.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/i18n/useTranslation.jsx:18"
+    },
+    {
+      "source": "func:frontend/src/i18n/useTranslation.jsx:useTranslation",
+      "target": "file:frontend/src/i18n/useTranslation.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/i18n/useTranslation.jsx:30"
+    },
+    {
+      "source": "func:frontend/src/main.jsx:<module>",
+      "target": "file:frontend/src/main.jsx",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/main.jsx:1"
+    },
+    {
+      "source": "func:frontend/src/utils/constants.js:<module>",
+      "target": "file:frontend/src/utils/constants.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/src/utils/constants.js:1"
+    },
+    {
+      "source": "func:frontend/vite.config.js:<module>",
+      "target": "file:frontend/vite.config.js",
+      "type": "structural_belongs_to",
+      "confidence": 1,
+      "evidence": "in frontend/vite.config.js:1"
+    }
+  ],
+  "metrics": {
+    "total_nodes": 253,
+    "total_edges": 209,
+    "code_to_db": {
+      "total_access_calls": 42,
+      "static_sql_count": 0,
+      "orm_call_count": 21,
+      "dynamic_unresolved_count": 21,
+      "dynamic_unresolved_ratio": 0.5
+    }
+  }
+}
