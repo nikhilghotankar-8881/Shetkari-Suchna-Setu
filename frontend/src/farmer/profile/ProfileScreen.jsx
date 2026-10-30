@@ -4,7 +4,7 @@ import { useFarmerToken } from '../../auth/FarmerTokenContext';
 import { useTranslation } from '../../i18n/useTranslation';
 import { MAHARASHTRA_DISTRICTS, CROPS_LIST } from '../../utils/constants';
 import { OnboardingFlow } from '../onboarding/OnboardingFlow';
-import { User, Trash2, Edit3, ShieldAlert, CheckCircle2, ShieldCheck, Lock } from 'lucide-react';
+import { User, Trash2, Edit3, ShieldAlert, ShieldCheck, Lock, Sprout, FileBadge, Droplets, Layers } from 'lucide-react';
 
 export const ProfileScreen = () => {
   const navigate = useNavigate();
@@ -21,8 +21,8 @@ export const ProfileScreen = () => {
     await deleteProfile();
     setDeletedMsg(true);
     setTimeout(() => {
-      navigate('/onboarding');
-    }, 1500);
+      navigate('/welcome');
+    }, 1200);
   };
 
   if (!hasProfile || isEditing) {
@@ -34,7 +34,7 @@ export const ProfileScreen = () => {
               onClick={() => setIsEditing(false)}
               className="text-xs text-stone-500 hover:text-stone-800 font-semibold underline touch-target"
             >
-              {lang === 'mr' ? '← रद्द करा आणि मागे जा' : '← Cancel & Go Back'}
+              {lang === 'mr' ? '← मागे जा' : '← Go Back'}
             </button>
           </div>
         )}
@@ -46,7 +46,7 @@ export const ProfileScreen = () => {
   return (
     <div className="p-4 max-w-md mx-auto space-y-4">
       {/* Profile Card */}
-      <div className="bg-white rounded-2xl p-5 shadow-xs border border-stone-200 space-y-4">
+      <div className="bg-white rounded-3xl p-5 shadow-xs border border-stone-200/90 space-y-4">
         <div className="flex items-center justify-between pb-3 border-b border-stone-100">
           <div className="flex items-center gap-3">
             <div className="w-11 h-11 rounded-2xl bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xl">
@@ -58,7 +58,7 @@ export const ProfileScreen = () => {
               </h2>
               <span className="text-[11px] text-emerald-700 font-semibold inline-flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5" />
-                {lang === 'mr' ? 'अनामिक शेतकरी प्रोफाईल' : 'Anonymous Farmer Profile'}
+                {lang === 'mr' ? 'शेती माहिती सक्रिय' : 'Active Farming Profile'}
               </span>
             </div>
           </div>
@@ -74,9 +74,10 @@ export const ProfileScreen = () => {
 
         {/* Selected Data Overview */}
         <div className="space-y-3 text-xs">
+          {/* Location */}
           <div>
             <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block mb-1">
-              {lang === 'mr' ? 'जिल्हा व तालुका' : 'District & Taluka'}
+              {lang === 'mr' ? 'शेतीचे ठिकाण' : 'Farm Location'}
             </span>
             <div className="font-semibold text-stone-800 bg-stone-50 p-2.5 rounded-xl border border-stone-100 flex items-center gap-2">
               <span>📍</span>
@@ -87,6 +88,46 @@ export const ProfileScreen = () => {
             </div>
           </div>
 
+          {/* Land & Irrigation Grid */}
+          <div className="grid grid-cols-2 gap-2">
+            <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-100">
+              <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-0.5">
+                {t('land_area_label')}
+              </span>
+              <span className="font-semibold text-stone-800">
+                {profile.land_area || '1.5'} {t(`land_unit_${profile.land_unit || 'hectare'}`)}
+              </span>
+              <span className="block text-[10px] text-stone-500 mt-0.5">
+                {t(`land_${profile.land_ownership || 'owner'}`)}
+              </span>
+            </div>
+
+            <div className="bg-stone-50 p-2.5 rounded-xl border border-stone-100">
+              <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-0.5">
+                {t('irrigation_label')}
+              </span>
+              <span className="font-semibold text-stone-800">
+                {t(`irrigation_${profile.irrigation || 'yes'}`)}
+              </span>
+            </div>
+          </div>
+
+          {/* Farmer ID */}
+          <div>
+            <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block mb-1">
+              {t('farmer_id_label')}
+            </span>
+            <div className="font-mono text-xs text-stone-800 bg-stone-50 p-2.5 rounded-xl border border-stone-100 flex items-center justify-between">
+              <span>{profile.farmer_id || (lang === 'mr' ? 'नोंदवलेला नाही (ऐच्छिक)' : 'Not provided (Optional)')}</span>
+              {profile.farmer_id ? (
+                <span className="text-[10px] bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded font-sans font-bold">
+                  {lang === 'mr' ? 'उपलब्ध' : 'Provided'}
+                </span>
+              ) : null}
+            </div>
+          </div>
+
+          {/* Crops */}
           <div>
             <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block mb-1">
               {lang === 'mr' ? 'नोंदणी केलेली पिके' : 'Selected Crops'}
@@ -97,7 +138,7 @@ export const ProfileScreen = () => {
                 return (
                   <span
                     key={cropId}
-                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-900 border border-emerald-200 text-xs font-medium"
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-emerald-50 text-emerald-900 border border-emerald-200 text-xs font-medium"
                   >
                     <span>{cropObj?.icon || '🌱'}</span>
                     <span>{lang === 'mr' ? cropObj?.name_mr : cropObj?.name_en || cropId}</span>
@@ -107,22 +148,23 @@ export const ProfileScreen = () => {
             </div>
           </div>
 
+          {/* Language Preference */}
           <div>
             <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider block mb-1">
-              {lang === 'mr' ? 'भाषा प्राधान्य' : 'Language'}
+              {lang === 'mr' ? 'भाषा' : 'Language'}
             </span>
             <div className="font-semibold text-stone-800">
-              {lang === 'mr' ? 'मराठी (Default)' : 'English'}
+              {lang === 'mr' ? 'मराठी' : 'English'}
             </div>
           </div>
         </div>
       </div>
 
-      {/* Privacy Guarantee Box (DPDP Act) */}
-      <div className="bg-stone-50 border border-stone-200/90 rounded-2xl p-4 text-xs text-stone-700 space-y-2">
+      {/* Privacy Guarantee Box */}
+      <div className="bg-stone-50 border border-stone-200/90 rounded-3xl p-4 text-xs text-stone-700 space-y-2">
         <div className="flex items-center gap-1.5 text-stone-900 font-bold">
           <Lock className="w-4 h-4 text-emerald-700" />
-          <span>{lang === 'mr' ? 'डेटा गोपनीयता हमी (DPDP Act 2023)' : 'Data Privacy Guarantee'}</span>
+          <span>{t('privacy_notice_title')}</span>
         </div>
         <p className="text-[11px] leading-relaxed text-stone-600">
           {t('privacy_notice_body')}
@@ -130,7 +172,7 @@ export const ProfileScreen = () => {
       </div>
 
       {/* Delete My Data Action */}
-      <div className="bg-white rounded-2xl p-4 border border-rose-200/80 space-y-3">
+      <div className="bg-white rounded-3xl p-4 border border-rose-200/80 space-y-3">
         <div className="flex items-center gap-2 text-rose-800 font-bold text-xs">
           <ShieldAlert className="w-4 h-4 text-rose-600 shrink-0" />
           <span>{t('delete_my_data')}</span>
@@ -182,4 +224,3 @@ export const ProfileScreen = () => {
     </div>
   );
 };
-
