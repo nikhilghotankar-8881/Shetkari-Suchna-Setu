@@ -2,7 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { api } from '../../api/client';
 import { VerificationBadge } from '../../components/VerificationBadge';
-import { SourceLink } from '../../components/SourceLink';
+import { EligibilityBadge } from '../../components/EligibilityBadge';
+import { useEligibilityMatch } from '../eligibility/useEligibilityMatch';
+import { useFarmerToken } from '../../auth/FarmerTokenContext';
 import { useTranslation } from '../../i18n/useTranslation';
 import {
   ArrowLeft,
@@ -16,11 +18,15 @@ import {
   AlertCircle,
   Clock,
   Sparkles,
-  Bookmark
+  Bookmark,
+  Check,
+  HelpCircle,
+  FileBadge
 } from 'lucide-react';
 
 export const SchemeDetailScreen = () => {
   const { id } = useParams();
+  const { profile } = useFarmerToken();
   const { lang, t } = useTranslation();
 
   const [scheme, setScheme] = useState(null);
@@ -37,6 +43,8 @@ export const SchemeDetailScreen = () => {
     });
     return () => { isMounted = false; };
   }, [id]);
+
+  const eligibilityMatch = useEligibilityMatch(scheme, profile);
 
   if (loading) {
     return (
@@ -98,12 +106,8 @@ export const SchemeDetailScreen = () => {
       {/* Main Detail Header Card */}
       <div className="bg-white rounded-2xl p-5 shadow-xs border border-stone-200/90 space-y-3">
         <div className="flex flex-wrap items-center justify-between gap-2">
+          <EligibilityBadge status={eligibilityMatch.status} />
           <VerificationBadge status={scheme.verification_status} />
-          {scheme.notice_id && (
-            <span className="font-mono text-[10px] text-stone-500 bg-stone-100 px-2 py-0.5 rounded border border-stone-200">
-              {scheme.notice_id}
-            </span>
-          )}
         </div>
 
         <h2 className="text-base font-extrabold text-stone-900 leading-snug">
@@ -127,6 +131,114 @@ export const SchemeDetailScreen = () => {
           </div>
         </div>
       </div>
+
+      {/* ── PERSONALIZED ELIGIBILITY MATCH BREAKDOWN ── */}
+      <section className="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4 space-y-2.5">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-1.5 text-emerald-950 font-bold text-xs">
+            <Sparkles className="w-4 h-4 text-emerald-700" />
+            <span>{lang === 'mr' ? 'तुमच्या प्रोफाईलशी जुळणी' : 'Match for Your Profile'}</span>
+          </div>
+          <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300">
+            {t(`elig_${eligibilityMatch.status}`)}
+          </span>
+        </div>
+
+        <p className="text-[11px] text-emerald-950/90 leading-relaxed">
+          {t(`elig_${eligibilityMatch.status}_tip`)}
+        </p>
+
+        {/* Condition Checkmarks */}
+        <div className="space-y-1 pt-1 border-t border-emerald-200/80 text-[11px]">
+          <div className="flex items-center gap-1.5 text-emerald-900">
+            <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span>
+              {lang === 'mr'
+                ? `जिल्हा: ${profile?.district ? 'जुळला' : 'सर्व जिल्हे'}`
+                : `District: ${profile?.district ? 'Matched' : 'State-wide'}`}
+            </span>
+          </div>
+          <div className="flex items-center gap-1.5 text-emerald-900">
+            <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span>
+              {lang === 'mr'
+                ? `शेती क्षेत्र: ${profile?.land_area || '१.५'} ${t(`land_unit_${profile?.land_unit || 'hectare'}`)}`
+                : `Landholding: ${profile?.land_area || '1.5'} ${t(`land_unit_${profile?.land_unit || 'hectare'}`)}`}
+            </span>
+          </div>
+          {eligibilityMatch.needsFarmerId && (
+            <div className="flex items-center gap-1.5 text-amber-900 font-semibold pt-0.5">
+              <AlertCircle className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+              <span>{lang === 'mr' ? 'महाडीबीटी शेतकरी आयडी देणे आवश्यक आहे.' : 'MahaDBT Farmer ID is needed for application.'}</span>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* ── CONDITIONAL DOCUMENT GUIDANCE (MahaDBT Rule) ── */}
+      <section className="bg-white rounded-2xl p-4 shadow-xs border border-stone-200/90 space-y-3">
+        <div className="space-y-1">
+          <h3 className="text-xs font-bold text-stone-900 flex items-center gap-1.5">
+            <FileText className="w-3.5 h-3.5 text-emerald-700" />
+            <span>{t('doc_hint_title')}</span>
+          </h3>
+          <p className="text-[11px] text-stone-500 leading-relaxed">
+            {t('doc_hint_body')}
+          </p>
+        </div>
+
+        <div className="divide-y divide-stone-100 border border-stone-200 rounded-xl overflow-hidden text-xs">
+          {/* Document 1: Farmer ID */}
+          <div className="p-2.5 flex items-center justify-between bg-stone-50/50">
+            <div className="flex items-center gap-2">
+              <FileBadge className="w-4 h-4 text-emerald-600 shrink-0" />
+              <span className="font-medium text-stone-800">{t('farmer_id_label')}</span>
+            </div>
+            <span className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+              profile?.farmer_id
+                ? 'bg-emerald-100 text-emerald-800'
+                : 'bg-amber-100 text-amber-800'
+            }`}>
+              {profile?.farmer_id ? t('doc_status_provided') : t('doc_status_needed')}
+            </span>
+          </div>
+
+          {/* Document 2: 7/12 Extract */}
+          <div className="p-2.5 flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <FileCheck className="w-4 h-4 text-stone-500 shrink-0" />
+              <span className="font-medium text-stone-800">{t('doc_712')}</span>
+            </div>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 text-stone-700">
+              {t('doc_status_needed')}
+            </span>
+          </div>
+
+          {/* Document 3: 8-A Extract */}
+          <div className="p-2.5 flex items-center justify-between bg-stone-50/50">
+            <div className="flex items-center gap-2">
+              <FileCheck className="w-4 h-4 text-stone-500 shrink-0" />
+              <span className="font-medium text-stone-800">{t('doc_8a')}</span>
+            </div>
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 text-stone-700">
+              {t('doc_status_needed')}
+            </span>
+          </div>
+
+          {/* Document 4: Water / Electricity Proof if applicable */}
+          {scheme.category_en === 'Micro-irrigation assistance' && (
+            <div className="p-2.5 flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <FileCheck className="w-4 h-4 text-stone-500 shrink-0" />
+                <span className="font-medium text-stone-800">{t('doc_electricity')}</span>
+              </div>
+              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-stone-100 text-stone-700">
+                {t('doc_status_needed')}
+              </span>
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* Strict Deadline Box */}
       <div className={`rounded-2xl p-4 border text-xs space-y-1 ${
@@ -179,17 +291,6 @@ export const SchemeDetailScreen = () => {
         <p className="text-xs text-stone-600 leading-relaxed">{eligibility}</p>
       </section>
 
-      {/* Required Documents */}
-      {documents && (
-        <section className="bg-white rounded-2xl p-4 shadow-xs border border-stone-200/90 space-y-1.5">
-          <h3 className="text-xs font-bold text-stone-800 uppercase tracking-wide flex items-center gap-1.5">
-            <FileText className="w-3.5 h-3.5 text-emerald-600" />
-            <span>{t('documents')}</span>
-          </h3>
-          <p className="text-xs text-stone-600 leading-relaxed">{documents}</p>
-        </section>
-      )}
-
       {/* Application Steps */}
       {application && (
         <section className="bg-white rounded-2xl p-4 shadow-xs border border-stone-200/90 space-y-1.5">
@@ -236,7 +337,7 @@ export const SchemeDetailScreen = () => {
             className="w-full bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 border border-stone-300 transition-colors touch-target"
           >
             <span>{t('view_source')}</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <ExternalLink className="w-3 h-3" />
           </a>
         )}
       </div>
@@ -248,4 +349,3 @@ export const SchemeDetailScreen = () => {
     </div>
   );
 };
-
